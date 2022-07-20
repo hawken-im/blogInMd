@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hawken.im</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hawken.im">
+<meta property="og:url" content="https://blog.hawken.im/index.html">
+<meta property="og:site_name" content="Hawken.im">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hawken">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@whoareyouandyou">
+  
+    <link rel="alternate" href="/atom.xml" title="Hawken.im" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hawken.im</a>
+      </h1>
+      
+		  
+	  <nav id="sub-nav">
+		
+		  <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+		
+			
+				 <a id="nav-twitter-link" class="nav-icon" target="_blank" rel="noopener" href="https://twitter.com/whoareyouandyou" title="twitter"></a>
+			
+		<a id="nav-search-btn" class="nav-icon" title="Search"></a>
+	  </nav>
+	  <div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.hawken.im"></form>
+	  </div>
+	  
+    </div>
+
+
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-kindledownload" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/19/kindledownload/" class="article-date">
+  <time datetime="2022-06-19T15:40:46.000Z" itemprop="datePublished">2022-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/19/kindledownload/">把kindle的书全部下载到电脑上！</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>亚马逊宣布 Kindle 将退出中国市场。<br>买了的书咋个办？亚马逊给的说法是书仍然可以下载并在阅读器中阅读。<br>但是我的泡面盖子已经好多年历史了，Pad 上的 APP 又给人不踏实的感觉——想起之前还经历过 Pad 版本太旧，Kindle APP 不支持的情况。</p>
+<p>所以趁自己在恐慌期间有动力，把下载 kindle 电子书的方法研究出来了：<br>（有拖延症的朋友也不必太着急，官宣是在2023年6月30日才正式停止运营。）</p>
+<p>第一步，工具下载：<br>首先要感谢这位大佬，这个工具是他创始的，还要感谢之后涌来的一群程序员大佬，做出了图形化界面，才有我们小白的操作空间：</p>
+<img src="/2022/06/19/kindledownload/credit.png" class="">
+<p>下载地址在这里：<br><a target="_blank" rel="noopener" href="https://github.com/yihong0618/Kindle_download_helper/releases">https://github.com/yihong0618/Kindle_download_helper/releases</a></p>
+<p>如果某种不明原因打不开这个网站，可以公众号回复“kindle”获取下载链接。</p>
+<img src="/2022/06/19/kindledownload/guifiles.png" class="">
+<p>找到自己操作系统所对应的文件进行下载。<br>第一个是 linux，第二个是 macOS，第三个是 windows。</p>
+<p>第二步，打开下载工具：</p>
+<img src="/2022/06/19/kindledownload/steps.png" class="">
+
+<p>第二.1步，点击登录（1 号红圈处），进入自己的 Kindle 图书管理页面：</p>
+<img src="/2022/06/19/kindledownload/f122.png" class="">
+
+<p>在这个页面按 F12 按键。以我对小白的了解（我就是），我认为有必要讲一下 F12 在哪里：</p>
+<img src="/2022/06/19/kindledownload/f12.jpg" class="">
+
+<p>第二.2步，在调试窗口中找两串神秘文本，粘贴到相应的位置：<br>出现了调试窗口，在这个窗口中搜索“csrf”，可以看到“csrfToken&#x3D;”””这一串文本。</p>
+<img src="/2022/06/19/kindledownload/csrf.png" class="">
+
+<p>把双引号里面的文本复制下来，粘贴到下图 3 号圆圈处。注意不能复制双引号。</p>
+<img src="/2022/06/19/kindledownload/steps.png" class="">
+
+<p>回到调试窗口，找到“network”这一栏，随便找一个带有 200 这个数字的数据，打开：</p>
+<img src="/2022/06/19/kindledownload/network.png" class="">
+
+<p>在小窗口中找到“cookie”，鼠标右键，复制下来：</p>
+<img src="/2022/06/19/kindledownload/cookievalue.png" class="">
+
+<p>粘贴到下图 2 号圆圈出：</p>
+<img src="/2022/06/19/kindledownload/steps.png" class="">
+
+<p>第二.3步，点击 4 号圆圈处，获取下载列表，等一小会儿，就会出现自己的书了；<br>第二.4步，点击 5 号圆圈处“浏览”按钮，指定自己的书要下载到哪里（如果是苹果电脑，必须点一次浏览，这样才能给电脑授权）：</p>
+<img src="/2022/06/19/kindledownload/steps.png" class="">
+
+<p>第二.5步，点击 6 号圆圈处的下载全部按钮。<br>这个时候会出现进度条，和一些进度提示，耐心等待完成就好了。</p>
+<p>第三步，转换成 epub 文件：<br>下载下来了后缀名是“.azw”的文件，用 Kindle APP 就可以打开了，但是我还是觉得 epub 文件更通用一点，这里提供一个转换工具：<br><a target="_blank" rel="noopener" href="https://www.neat-reader.cn/downloads/converter">https://www.neat-reader.cn/downloads/converter</a></p>
+<img src="/2022/06/19/kindledownload/neatconverter.png" class="">
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/06/19/kindledownload/" data-id="cl5txeklw000k35cthgln1o6a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-itsgettingbadorbetter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/10/itsgettingbadorbetter/" class="article-date">
+  <time datetime="2022-06-09T16:31:14.000Z" itemprop="datePublished">2022-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/10/itsgettingbadorbetter/">画 - 思绪大乱炖</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨晚听了朱利安大王的世界历史课的第一讲。<br>脑子里是一团乱麻还没有理出头绪。<br>直到今天和团队的大佬聊起 AI 作画。</p>
+<p>我们知道，在 AI 擅长的领域，人类早已一败涂地。而现在艺术领域遭到 AI 的大举进攻。<br>近一两年时间看到了很多很掉 san 值的 AI 作画，可以说看到 AI 画的这么烂，有点失望也有点安心。<br>可就在前不久，一个叫 Disco Diffusion 的 AI 作画引擎大火。看到这个 AI 的作品，心情从失望+安心这种奇怪的混合，变成激动+担忧。</p>
+<p>这里引用西乔的文章来介绍一下这个 AI 作画工具：<br>[引用]</p>
+<p>一想到这个 AI 也许在人类睡大觉的时候也不眠不休的在学习人类的绘画作品，有点渗人呢。</p>
+<p>AI 不眠不休的学习人类，这种焦虑刺激着我认真听课，学习人类：</p>
+<img src="/2022/06/10/itsgettingbadorbetter/lesson1.png" class="">
+
+<p>朱利安大王的人类历史课，一共有七讲。<br>刚刚听完第一讲，主要是两个部分：<br>一，人类作为生物这种存在本身<br>二，人类早期的文明</p>
+<p>人类这种生物，可以说是进化树上开出的一朵奇葩了。</p>
+<p>门-纲-目-科-属-种。<br>在属和种这两个分支，智人都是独一无二的存在。上溯到科，也仅有几种猩猩和人放在一起。相较别的物种，一个科下面上百个属上千个种，都是很正常的。<br>我们在进化树这个大树上伸出一根长长的光溜溜的树枝，都快伸到外星去了。</p>
+<p>上亿年的生物进化史，智人的出现才十万年。而且这十万年间，考古查证的其他人属人种生物被排挤的一干二净。这个是 Wikipedia 上扒下来的人类种的时间线：</p>
+<img src="/2022/06/10/itsgettingbadorbetter/timeline.jpg" class="">
+
+<p>看看，几百万年漫长的直立人种历史，在最近2万年左右，尼安德特人消亡，只剩下智人，也就是我们。<br>凭什么智人剩下来了，尼安德特人和其他人种到哪里去了，目前是未解之谜。</p>
+<p>作为一种动物，人类搞不明白人类自己。</p>
+<p>而作为一种建立了文明的智慧生物，嗨，看看人类在地球上都干了些什么。</p>
+<p>这里有个概念：世界上最长的步行路线（the Longest Walkable Distance on Earth）<br>有个网站介绍了这个路线：<br><a target="_blank" rel="noopener" href="https://www.popularmechanics.com/science/a30285283/longest-walkable-distance-earth/">https://www.popularmechanics.com/science/a30285283/longest-walkable-distance-earth/</a></p>
+<img src="/2022/06/10/itsgettingbadorbetter/road.png" class="">
+
+<p>test<br><img src="/2022/06/10/itsgettingbadorbetter/road.png"></p>
+<p>这条路全程都可以步行通过。长度是14000英里。喜欢徒步的人应该知道，人一天大概可以走50公里，差不多是30英里。我们算一下：14000&#x2F;30&#x3D;466天。<br>一年多。<br>一个人在理想的情况下（有吃有喝有住）就这么走下去，一年多可以穿过整个亚非欧三个大陆。<br>再对比智人存在的9万年时间，是不是太长了点，足够我们走遍全世界了。<br>智人的迁徙路线：</p>
+<img src="/2022/06/10/itsgettingbadorbetter/homo.png" class="">
+
+<p>祖先在几万年前走遍全世界，看看我们现在，有了汽车，飞机，火车，远洋巨轮。我们却被自己在地图上画的那一根根线，圈了起来，哪儿都去不了。</p>
+<p>我在[元宇宙三问]这篇文章中就说，人类以后也许再也没有自由迁徙的日子了，统统到虚拟世界去当电池，赚取维持肉身存活的营养液吧。</p>
+<p>朱利安大王讲到史前文明的壁画。<br>首先这是3万年前的史前壁画，发现于法国拉斯科洞穴。</p>
+<img src="/2022/06/10/itsgettingbadorbetter/lsk1.jpg" class="">
+<p>一头充满细节的牛</p>
+<img src="/2022/06/10/itsgettingbadorbetter/lsk2.jpg" class="">
+<p>整体观感</p>
+<p>大王还提到了另一处史前壁画：<br>阿根廷平图拉斯河，手洞。<br>叫它手洞是因为真的有很多只手：</p>
+<img src="/2022/06/10/itsgettingbadorbetter/hand.jpg" class="">
+
+<p>跟前面的法国拉斯科洞穴一样，也有动物：</p>
+<img src="/2022/06/10/itsgettingbadorbetter/sd2.jpg" class="">
+
+<p>甚至还有涂鸦：</p>
+<img src="/2022/06/10/itsgettingbadorbetter/sd3.jpg" class="">
+
+<p>我看了第一反应，和其他同学一样，觉得法国拉斯科洞穴的画更漂亮。<br>我们来对比一下两处壁画的年代：</p>
+<ul>
+<li>法国拉斯科洞穴，3万年前。</li>
+<li>阿根廷平图拉斯河手洞，复杂些：<br>动物（其实是大羊驼），9000年前；<br>涂鸦，7300多年前；<br>手，公元前550年左右……</li>
+</ul>
+<p>3万年前的壁画比两万年以后的涂鸦明显漂亮，说明3万年前的人类更聪明吗？</p>
+<p>来看看身边有多少孩子到处乱涂乱画吧。<br>合理的解释是，后来的人类技术更先进，更容易获得颜料和作画工具，更多不专业的人都可以画壁画，甚至是熊孩子。</p>
+<img src="/2022/06/10/itsgettingbadorbetter/dingjinhao.jpg" class="">
+
+<p>以前的画家，为了赚取生活费，要给王公贵族打工，给他们画肖像画。或者给神仙打工，给上帝画壁画。那时候颜料也贵，没人付钱的话，画家不太可能自己凭借兴趣爱好画个什么风景画。</p>
+<p>周末去参观了印象派的绘画展。</p>
+<img src="/2022/06/10/itsgettingbadorbetter/yxp.jpg" class="">
+<p>激发印象派画家开创印象派的很重要的一个动因是，相机的发明。<br>对啊，都有照片，我没必要以写实为目的来画画了。或者，不是没必要而是没需求了。那个时候的画家面对相机的心情是怎样的呢？是否跟现在的艺术家们面对 AI 绘画的心情一样呢？</p>
+<p>至少，我看到艺术家们从此开创了越来越多的艺术形式，开始奔放地表达着自己，无论是好坏美丑善恶或者表达不好不坏反正就什么都不是的或者表达凭什么要这样非要是什么不是什么的艺术。</p>
+<p>现在我请 AI 帮我画了一幅画来具象化我们当前的一种状态：</p>
+<img src="/2022/06/10/itsgettingbadorbetter/qrp.png" class="">
+
+<p>感谢 AI 帮我这样一艺术白丁也能用艺术创作来表达自己。<br>总之，我们走着瞧吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/06/10/itsgettingbadorbetter/" data-id="cl5txeklv000j35ctakz7d2eq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-敏捷学习方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2022-03-03T11:01:24.000Z" itemprop="datePublished">2022-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">敏捷学习方法论</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="浅尝则止是正义！逃避困难也可以！论敏捷学习方法在编程学习上的应用。"><a href="#浅尝则止是正义！逃避困难也可以！论敏捷学习方法在编程学习上的应用。" class="headerlink" title="浅尝则止是正义！逃避困难也可以！论敏捷学习方法在编程学习上的应用。"></a>浅尝则止是正义！逃避困难也可以！论敏捷学习方法在编程学习上的应用。</h1><h2 id="0-浅尝则止未尝不可"><a href="#0-浅尝则止未尝不可" class="headerlink" title="0. 浅尝则止未尝不可"></a>0. 浅尝则止未尝不可</h2><p>我们讨论学习方法的时候，常有的一个观念就是深入学习，认真钻研总是好的；不深入，肤浅，皮毛，浅尝则止都是贬义词。这篇文章我想说的一个观点是：</p>
+<p>浅尝则止未尝不可。</p>
+<p>特别是应用在编程的学习上，好读书不求甚解其实是一个不错的学习模式。再来我还会用敏捷思维来完善这种学习模式，形成一个学习方法论。</p>
+<aside>
+☝ 特别注意：本文讨论的学习形式是通过阅读来学习的自学。这是本人和很多自学者所认可的一种高效的学习方式，至于这个观点，李笑来在《自学是一门手艺》中就有所阐述（1.3 只靠阅读习得新技能）。
+
+</aside>
+
+<h2 id="1-想学好编程，想学多好？其实是学习的项目管理问题"><a href="#1-想学好编程，想学多好？其实是学习的项目管理问题" class="headerlink" title="1. 想学好编程，想学多好？其实是学习的项目管理问题"></a>1. 想学好编程，想学多好？其实是学习的项目管理问题</h2><p>这里引入一个项目管理的概念：“项目管理三角形”；</p>
+<p>如图，想要追求质量，就要投入相应的成本和时间。如果工程范围再不进行限制，整个项目的成本将会爆炸式增长，最后根本收不了工。</p>
+<img src="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/0.png" class="">
+
+<p>要学习一门技能，完全可以套用相同的模型。</p>
+<p>不管我在前面抖机灵说什么“浅尝则止未尝不可”，但学一门技能，谁又不想学得炉火纯青，达到一定造诣呢？</p>
+<p>在编程领域能达到什么样的学习成果，就要像项目管理那样考虑学习投入的平衡问题。我们把三角形的标注换成这样应该很好理解：</p>
+<img src="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/1.png" class="">
+
+<p>完全套用这个三角形来建立学习方法又有些问题，因为在学习上我们的成本投入基本就是自己的时间，特别如果是通过阅读来学习，不是报各种学习班的话，金钱成本几乎可以忽略。</p>
+<p>我们在学习上的投入具体有哪些呢？</p>
+<ul>
+<li>首先一定是时间投入，花的时间越多自然会产生更多的学习成果，学界公认，无可辩驳。</li>
+<li>接下来要看我们投入时间的质量，其实就是专注度，如果熬更守夜，导致学习专注度不够，投入再多时间，质量一定是低下的。</li>
+<li>最后，是兴趣，兴趣可以影响我们的专注度；如果兴趣浓厚，在没有学习的时候我们的大脑都在思考和处理；如果兴趣浓厚，坐电梯都会思考电梯的控制算法，相当于一直在利用碎片时间进行学习。</li>
+</ul>
+<p>这三个投入是互相影响的，所以这个公式只好把三个因素乘起来：学习成本投入 &#x3D; 时间<em>专注度</em>兴趣。给学习成本投入取个热血的名字，叫学力值吧，最终公式：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">学力值 = 时间*专注度*兴趣</span><br></pre></td></tr></table></figure>
+
+<p>于是三角形中的两边就合起来，画成一个正方形：</p>
+<img src="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/2.png" class="">
+
+<p>那么还剩“范围”这一边，看看编程这个技能有可能涵盖的范围吧：</p>
+<p>首先从应用范围来看，</p>
+<p>学习编程可以用于数据分析与统计、人工智能、知识管理、游戏开发、文书处理、机械自动化控制……</p>
+<p>或者打开你的手机看看有多少 APP 就有多少不同的应用。</p>
+<p>而这些不同领域的应用需要的编程知识其实也不尽相同。</p>
+<p>再来看学习编程有可能涉及的知识范围：</p>
+<ol>
+<li><p>编程基础知识，就是我们在各种“从入门到精通“的编程入门书里面学到的那些知识。举例如：</p>
+<ul>
+<li>基本语法</li>
+<li>数据类型</li>
+<li>条件判断</li>
+<li>循环、递归、嵌套等过程控制</li>
+<li>面向对象的思想</li>
+<li>链表、二叉树等各种数据结构</li>
+<li>数据库的操作</li>
+</ul>
+<p> 等等等等
+ </p>
+</li>
+<li><p>数理知识，就像刚刚提到的各种应用领域，在不同的应用领域可能会用到好多不同的数学知识：</p>
+<ol>
+<li>图论</li>
+<li>离散数学</li>
+<li>工程数学</li>
+<li>逻辑学</li>
+<li>统计学</li>
+</ol>
+<p> 等等等等
+ </p>
+</li>
+<li><p>计算机系统的相关知识，因为编程是在计算机上操作，一些计算机的知识总要懂吧，至少都要学个打字和一些基础操作，在当今网络时代，还要学一些网络知识才能做出实用的软件应用。</p>
+</li>
+<li><p>英语！是的，英语技能对于学编程非常重要。会一点点英语才能看懂程序语法。而会很多英语，就可以看英文文档了。<del>偷偷说：在文档里学习才是高效呢。要是读者大大们英语好，写编程教程的人会丢饭碗的（这句划掉）。</del></p>
+</li>
+</ol>
+<p>综上，如果我们不注意控制学习的范围，我们需要投入的学力值就会去填无底洞了。</p>
+<p>那么投入编程学习前，请参考这个模型，根据自己的兴趣、自己能够投入的时间、自己想要应用的范围做一个规划吧。</p>
+<img src="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/3.png" class="">
+
+<h2 id="2-要深度还是要广度？其实是投入与回报的平衡问题。"><a href="#2-要深度还是要广度？其实是投入与回报的平衡问题。" class="headerlink" title="2. 要深度还是要广度？其实是投入与回报的平衡问题。"></a>2. 要深度还是要广度？其实是投入与回报的平衡问题。</h2><p>前面我们讲了一个平面的学习模型，似乎只要投入学力值就可以很顺利获得学习成果。可事实仍然是编程学习者众，学成者寥寥。其实除了学习者自身的规划与投入，我的观察是，很多编程学习教程本身对范围没有一个好的把握，典型如：《某语言从入门到精通》、《N天掌握某语言》。</p>
+<p>回顾我们的学习模型：</p>
+<img src="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/3.png" class="">
+
+<p>这种教程想到达的学习成果是精通、掌握（我理解这两个词是一个意思）。</p>
+<p>投入的时间是N天？一本书就从入门到精通？写书的是有多瞧不起自己的专业？</p>
+<p>这种书翻开会发现，大同小异：比如先是教你输出一个“Hello World”，然后就是基础知识比如语法、条件判断、循环、数据结构；再讲到面向对象编程；再强行切入网络、数据库这些劝退新人的环节，可能作者都知道后面没几个人在看了就更加不注意对新人的友好度。最后扔几个编程实例，也许就是所谓的精通或掌握了。</p>
+<aside>
+☝ 广告插入：在 [XUE.cn](http://xue.cn) 上，唯一一本“从入门到精通”，是讲 Vim 的。Vim 是一款上手之后会很好用的文本编辑器。这种工具的掌握“从入门到精通”是没问题的。
+
+</aside>
+
+<p>我们要意识到的是，范围是广度和深度两个维度构成的。</p>
+<p>而这两个维度对学力值投入的需求是不同的。</p>
+<p>比方说，我花五天就可能入门五种编程语言（广度），但是要精通一门语言（深度）需要花五年。</p>
+<p>学习的广度和投入的程度正相关，呈线性增长。如图所示：</p>
+
+
+<p>学习的深度和投入的程度也是正相关，但是呈对数增长。如图所示：</p>
+
+
+<p>而广度本身又会影响深度，这句结论有个很好理解的俗话叫做：</p>
+<p>触类旁通。就像我们经常观察到很多人学的东西多不说，学习新东西还能很快理解，抓住重点，找到学习方法，精进自己的技艺。</p>
+
+
+<p>因此容我再点题：逃避困难也可以。</p>
+<p>因为我们以产出的成果为导向来看，程序设计是一个开放性的课题。</p>
+<p>比如我们需要实现一个数据存储的需求，数据库可以，看起来很蠢的文本文件也可以。</p>
+<p>新手很头疼的递归啊排序啊这些算法是能解决很多性能问题，但在不需要性能的时候，写个很蠢的嵌套循环也可以。</p>
+<p>也许会有人质疑，想要把编程学好，认真，努力，迎难而上，为什么到你这就不可以了？</p>
+<p>我在本文表达的意思，主要还是针对学力的保护和高效利用，保护我们的兴趣，专注力，更高效地利用学习时间。如果我们提前遇到了高等级的怪兽，先走别的路就好，等我们学了更多，再回过来，常常能意外发现过去的困难并不是困难。</p>
+<p>因为程序的这种开放性特点，成了我们学习编程才享有的特权。我们为何不利用呢？</p>
+<h2 id="3-拥抱敏捷：敏捷学习方法"><a href="#3-拥抱敏捷：敏捷学习方法" class="headerlink" title="3. 拥抱敏捷：敏捷学习方法"></a>3. 拥抱敏捷：敏捷学习方法</h2><p>本文开头提到，用项目管理的思维来学习编程。而项目管理的方法论是在上个世纪60年代建立起来的，适用于人类对各种工程项目进行大规模合作。</p>
+<p>软件开发行业的出现显然是晚于传统项目所在行业的。到了2001年，一群软件行业大佬相约去滑雪，互相吐槽抱怨了几句终于发现大家都不太认同旧时代的章法，于是滑雪之余顺便签署了一份“敏捷宣言“。</p>
+<p>敏捷宣言的原文以及配套的十二条原则可以在官网上看到（链接附后），经过多年的发展，敏捷方法已经形成了一套成熟的管理体系。这套体系大概长这样：</p>
+<img src="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/7.png" class="">
+
+<p>不是开玩笑，这真就是传统工程项目和软件工程项目的最大区别。</p>
+<p>在传统工程中，如果要建造一辆汽车，需要一个零件一个零件生产，组装，最后完工才能投入使用。</p>
+<p>敏捷开发是这样：我先做滑板车，不需要考虑路况、安全、燃油、性能，满足代步的基本需求先。下一步升级可以把轮子放大，加上把手，就变成了踏板车。</p>
+<p>把用户正踩脚下滑着的滑板车轮子改大？每次软件更新不就是做类似的事吗？就是说每一个小的项目进度都可以单独成为一个独立运行的产品。</p>
+<p>说了这么多软件工程的项目管理方法，我跑题了吗？</p>
+<p>别忘了，我们在讨论编程的学习方法，编程的产出就是软件啊！</p>
+<p>是的，编程学习完全可以采用敏捷思维来进行！</p>
+<p>回顾我们上一节讨论的学习范围示意图。我们确实知道，一味的浅尝辄止和逃避困难，导致在一定范围内深度不足，就无法达成我们想要的学习成就。但经过本节的讨论，我们是不是可以试着，敏捷地，达成学习成就呢？</p>
+<p>即使刚入门的新手，抱着“想要做一辆跑车“的心态去学习，有错吗？为了实现这个远大的目标，我们知道要一步一步的来。</p>
+<p>那同样的一步，我们学着做一个滑板车还是做一个跑车的轮子？（也许直到放弃都用不上这个轮子）</p>
+
+
+<p>敏捷方法给软件行业带来了巨大改变，我认为敏捷也能够让我们的编程学习得到效率的提升。</p>
+<p>也即是我们探寻好的编程学习方法的最终目的：</p>
+<p>在一定学习范围内，用更少的学习投入，获得更多的学习成果。</p>
+<h2 id="4-学习成果的积累"><a href="#4-学习成果的积累" class="headerlink" title="4. 学习成果的积累"></a>4. 学习成果的积累</h2><p>敏捷学习方法还会给编程学习者带来一个非常重要的好处。就是学习成果的积累！</p>
+<p>如果是按照传统的编程学习模式，从入门直到放弃，我们都没有造出一辆跑车，最后硬盘里会散布着堆积着一辆永远不可能完成的跑车的零件。</p>
+<p>如果按照敏捷方法来学习，我们一开始就能造出一辆滑板车，等我们最终造出跑车的时候，我们已经造了自行车、电瓶车、摩托车。</p>
+<p>是的，编程学习特别适合积累学习成果：</p>
+<ol>
+<li>软件不会占用物理空间。</li>
+</ol>
+<p>放硬盘里，仓储成本不要太便宜。</p>
+<p>要是做木工，学徒时期做的东西只能当柴烧了。</p>
+<ol start="2">
+<li>代码可以复制粘贴。</li>
+</ol>
+<p>每一次产出学习成果都可以复用原来的代码做一个新的版本，并且保留上一个版本。</p>
+<p>要是做木工，做好的板凳不光很难改，就算修改也只能在原来的板凳上改。</p>
+<ol start="3">
+<li>可以修改更大的成熟的项目，放大我们的学习成果。</li>
+</ol>
+<p>举例如 Github，我们的学习成果甚至可以提交成为某个项目的贡献，我们也可以 fork 别人的项目作为自己的项目在上面修改。</p>
+<p>要是做木工，师傅是不会把他做好的成品家具给你练手的。</p>
+<ol start="4">
+<li>更容易应用自己的成果。</li>
+</ol>
+<p>我们可以把自己做的东西放到自己的网站上，打包放到手机上，就可以用了。就算是发布到应用商店也是我们可以承受的价格。</p>
+<p><del>要是做木工，我们做好的板凳也是可以自己用的。做得好的挂淘宝上卖？好像也可以？（划掉划掉）</del></p>
+<p>总之，应用敏捷学习方法，我们可以积累更多的学习成果，我们投入的宝贵学力可以取得更多的收获，更多的收获又可以激励我们的学习兴趣。</p>
+<p>怎么实践我们的敏捷学习方法呢？我模仿滑雪场那群大佬拟了一份敏捷编程学习宣言，包含了一套价值观和一些原则性的方法，希望对各自努力前行的自学者们有所帮助：</p>
+<hr>
+<h2 id="敏捷编程学习宣言"><a href="#敏捷编程学习宣言" class="headerlink" title="敏捷编程学习宣言"></a>敏捷编程学习宣言</h2><p>作为自学者，我们身体力行地实践和探索更好的编程学习方法，提高了自己的学习效率。为帮助更多的人，我们建立这样一套价值观：</p>
+<p>保持兴趣和专注地高效学习 高于 大量投入时间的学习</p>
+<p>平衡学习范围的深度和广度 高于 大量投入学力追求深度</p>
+<p>在小范围内及时产出成果 高于 对知识点的全面掌握</p>
+<p>响应变化 高于 遵循计划</p>
+<p>以上，尽管右项有其价值，我们更重视左项的价值。</p>
+<h3 id="敏捷编程学习方法"><a href="#敏捷编程学习方法" class="headerlink" title="敏捷编程学习方法"></a>敏捷编程学习方法</h3><p>基于以上的学习宣言，我们总结了一些可以遵循的原则来实践适合自己的敏捷学习方法：</p>
+<p>我们最重要的目标，是产出学习成果。</p>
+<p>寻找容易产生学习成果的编程语言入手。而这样的编程语言容易产生学习成果：开发环境搭建简单；编译和打包简单；发布和运行简单。</p>
+<p>寻找社区很活跃的编程语言入手。社区活跃意味着有很多方便的库可以用，很多热门项目可以参与，很多问题都能 Google 到答案。</p>
+<p>不用局限于一本书，可以同时阅读多本书籍。因为不同的书籍目录结构不同，学习范围的广度和深度都不同，我们可以根据自己的需要来搭配书籍。</p>
+<p>尽量选择电子书这类非实体的教材。便于我们用 Ctrl+F 来检索书籍，还可以 Ctrl+C Ctrl+V，大量提升学习成果的产生效率。</p>
+<p>用好官方文档，因为教材覆盖的范围有限，官方文档可以帮我们兜底，补充我们实现学习成果所需的知识点。编程语言基本上都有自己的官方网站，而官方网站基本上有官方文档。找到它们，在不懂的时候先搜索一下官方文档。</p>
+<p>用好 Google。在教材、官方文档都解决不了我们问题的时候，Google 是最后的兜底手段。希望你能尽量用 Google 来搜索自己需要的知识点，实在因为网络原因用不了，还可以试试 Bing。如果用某度，只会给我们带来学力的损失。</p>
+<p>遇到上面的办法都解决不了的困难，先绕开困难。条条大路通罗马，甚至小路也可以。实现一个可运行的程序有非常多的方法。</p>
+<p>最后，简洁为本，以最小可运行的产出为目标来学习，大胆略过书中用不上的知识点，减少不必要的学力投入。</p>
+<hr>
+<p>附：</p>
+<p>敏捷宣言 <a target="_blank" rel="noopener" href="https://agilemanifesto.org/">https://agilemanifesto.org/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" data-id="cl5txekm5000w35cthy3d1j2m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Go语言写的进度条bot-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/24/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-3/" class="article-date">
+  <time datetime="2022-02-23T16:22:43.000Z" itemprop="datePublished">2022-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/24/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-3/">用 Go 语言写焦虑发生器并发布到 Rum 上·最终篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初学 Go 语言是在去年 11 月 20 日。到今年 2022 年的 2 月 3 日，我写了一个小 bot 连续运行成功，发布到了 github 上开源。花了两个多月时间。我感觉效率还是不错的。<br>于是我这就来记录这段学习经历：<br>目的一是让同样正在跨编程入门这道薛定谔之忽高忽低门槛的小白同学一些参考，更顺利的入门编程；<br>目的二是回顾并巩固自己过去的学习，为下一步继续学习打好基础；<br>目的三是让更多的人能够对 Rum 这个新的东西感兴趣。<br>希望能成功达成目的：</p>
+<h2 id="到服务器上去运行-bot"><a href="#到服务器上去运行-bot" class="headerlink" title="到服务器上去运行 bot"></a>到服务器上去运行 bot</h2><p>Rum 是一款建立在区块链上的去中心化的内容平台。</p>
+<p>这个定义不一定准确，因为 Rum 现在还是非常初级的阶段，想象空间非常大，提前下定义只会限制想象。这也是我选择 Rum 来学习 Go的原因吧。<br>前面三篇我们做好了一个可以持续运行并给 Rum 发送内容的 bot。我们自己的电脑不一定会长期在线和联网。于是我们可以在服务器上去运行 Rum，同时再运行我们写好的 bot。</p>
+<p>我自己搭建了一个运行 Rum 服务端（Rum 服务端我们称为 quorum）的服务器环境，再用我本地的电脑去连接，以便我后续在本地写 Go 程序能够更容易地在服务器环境上去测试。这个过程我也总结了一篇文章：<br><a href="https://blog.hawken.im/2022/01/15/run-quorum-on-ubuntu/">从零开始在 Ubuntu 20.04 上Build Quorum 并用本地 Rum App 进行连接</a></p>
+<p>上面提到的文章也是写给我这样的新手小白看的，目的都是帮助新手避免踩坑，与帮助自己巩固基础并进行下一步的学习。搭建好环境之后，像我们自己在电脑上测试 bot 一样，把我们的代码放到服务器上运行就可以了。</p>
+<h2 id="变得更酷之立-flag（带参数运行）"><a href="#变得更酷之立-flag（带参数运行）" class="headerlink" title="变得更酷之立 flag（带参数运行）"></a>变得更酷之立 flag（带参数运行）</h2><p>既然到了服务器上去运行就不得不用命令行进行操作。命令行对我这个小白来说，用起来即使不方便，感觉上很酷，就够了。我们自己写的程序要是也需要输入一个带参数的命令才能运行，岂不是酷毙了。</p>
+<p>也是一番搜索，查到我们要带参数运行命令，需要一个包叫做 flag。是的，在命令行里带参数，就是立 flag。<br>我们 import 这个包：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;flag&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>然后在 main 函数里立起一个新的 flag </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flagGroupID := flag.String(<span class="string">&quot;gid&quot;</span>, <span class="string">&quot;fe2842cb-db6b-4e8a-b007-e83e5603131c&quot;</span>, <span class="string">&quot;group ID, default ID is for testing&quot;</span>)</span><br><span class="line">flag.Parse()</span><br></pre></td></tr></table></figure>
+
+<p>调用 flag.String 方法，需要三个参数，第一个是 flag 名，这里我写的 gid，group ID 的简写；第二个是默认值，我用了“Go语言学习小组”的 ID；第三个是一个说明文档，用户用了 -h 的 flag，可以告诉用户怎么使用。<br>填完了该填的参数，需要用 flag.Parse() 来解析用户传递的 flag。<br>最后需要注意的一点是， flag.String 返回的是一个地址，要用上 flag 的值需要加上 * 这个符号，于是 postToRum 这个函数的第三个参数现在写成这样：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">postToRum(<span class="string">&quot;2022 进度条&quot;</span>, progressBar, *flagGroupID, url)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="变得更酷之通过外部-config-文件配置参数"><a href="#变得更酷之通过外部-config-文件配置参数" class="headerlink" title="变得更酷之通过外部 config 文件配置参数"></a>变得更酷之通过外部 config 文件配置参数</h2><p>要正式运行这个代码了，会有好多测试，每次都输入一长串的 ID 感觉很麻烦而且一点都不酷。<br>看了大佬们的代码，经常都会有一个配置文件，把很多东西写好在配置文件上，再来运行。<br>酷！我们也来搞这个。</p>
+<p>先设计一下我们配置文件的结构，之前学过一点 Json 的数据结构，所以也没多想，就用 Json 来作为配置文件的格式吧。然后画图进行一个简单的框架设计：</p>
+<img src="/2022/02/24/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-3/struct.png" class="">
+
+<p>这里面计划的功能冗余了一些，很多都没用上，比如可以选择不同的发送方法什么的，可以留给读者来加工（嗯，并不是我偷懒了），按照设计写出来的 Json 文件如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">&quot;url&quot;</span>:<span class="string">&quot;https://127.0.0.1/api/v1/group/content&quot;</span>,</span><br><span class="line"><span class="attr">&quot;groups&quot;</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;YearProgress 2022&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;ID&quot;</span>:<span class="string">&quot;[quorum seednet ID]&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;testGroup&quot;</span>:<span class="literal">false</span>,</span><br><span class="line">        <span class="attr">&quot;cron&quot;</span>:&#123;</span><br><span class="line">            <span class="attr">&quot;method&quot;</span>:<span class="string">&quot;daily&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;schedule&quot;</span>:<span class="string">&quot;0 0 * * *&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">&quot;timeZone&quot;</span>:<span class="string">&quot;UTC&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Test Group&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;ID&quot;</span>:<span class="string">&quot;[quorum seednet ID]&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;testGroup&quot;</span>:<span class="literal">true</span>,</span><br><span class="line">        <span class="attr">&quot;cron&quot;</span>:&#123;</span><br><span class="line">            <span class="attr">&quot;method&quot;</span>:<span class="string">&quot;percently&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;schedule&quot;</span>:<span class="string">&quot;default&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">&quot;timeZone&quot;</span>:<span class="string">&quot;UTC&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下一步是解析并读取配置文件，把刚刚的一段 Json 保存到 config.json 文件中，和代码放在一个根目录下。<br>读取 Json 文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rawData, _ := ioutil.ReadFile(<span class="string">&quot;config.json&quot;</span>) </span><br></pre></td></tr></table></figure>
+
+<p>这个时候变量 rawData 储存的是 config.json 里面的字符串，也就是 String 格式。我们还需要解析到一个 struct 中，按照我们自己设定的格式来写 struct：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Cron <span class="keyword">struct</span> &#123;</span><br><span class="line">	Method   <span class="keyword">string</span> <span class="string">`json:&quot;method&quot;`</span></span><br><span class="line">	Schedule <span class="keyword">string</span> <span class="string">`json:&quot;schedule&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> Group <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name      <span class="keyword">string</span> <span class="string">`json:&quot;name&quot;`</span></span><br><span class="line">	ID        <span class="keyword">string</span> <span class="string">`json:&quot;ID&quot;`</span></span><br><span class="line">	TestGroup <span class="keyword">bool</span>   <span class="string">`json:&quot;testGroup&quot;`</span></span><br><span class="line">	Cron      Cron   <span class="string">`json:&quot;cron&quot;`</span></span><br><span class="line">	TimeZone  <span class="keyword">string</span> <span class="string">`json:&quot;timeZone&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> Configs <span class="keyword">struct</span> &#123;</span><br><span class="line">	URL    <span class="keyword">string</span>  <span class="string">`json:&quot;url&quot;`</span></span><br><span class="line">	Groups []Group <span class="string">`json:&quot;groups&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以把 rawData 里面的字符串存到 Configs 这个我们新建的 struct 里，这次我们直接写一个读取 config 文档的函数好了：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReadConfig</span><span class="params">(jsonFile <span class="keyword">string</span>)</span> *<span class="title">Configs</span></span> &#123; <span class="comment">// to read config file</span></span><br><span class="line">	rawData, _ := ioutil.ReadFile(jsonFile) <span class="comment">// filename is the JSON file </span></span><br><span class="line">	<span class="keyword">var</span> configs Configs</span><br><span class="line">	json.Unmarshal(rawData, &amp;configs)</span><br><span class="line">	<span class="keyword">return</span> &amp;configs</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="更多：自定义包"><a href="#更多：自定义包" class="headerlink" title="更多：自定义包"></a>更多：自定义包</h2><p>注意到我们的 ReadConfig 函数是用的大写字母开头，因为我把 ReadConfig 函数写进了一个自定义包里。所以 ReadConfig 函数是一个公共的函数，就是说我 import 了 ReadConfig 所在的包，就可以调用这个函数。<br>下面就讲怎么做一个自定义包，非常简单，包名就是文件夹名，把文件夹放到根目录里。比如，我的包名就叫 readconfig，于是文件夹也叫 readconfig，文件夹里面的代码源文件名可以随便写，我就写 readconfig.go 了。<br>readconfig.go 的第一行不能随便写，要写成：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> readconfig</span><br></pre></td></tr></table></figure>
+
+<p>于是我们就成功自定义了一个叫 readconfig 的包。<br>接下来把上一步写好的 ReadConfig 函数以及 Configs 的 struct，放置于 readconfig.go 里就好了。</p>
+<p>回到根目录的 main.go，这个时候有个特别需要注意的是，因为是自定义包，我们需要在 readconfig 前面加上主包名，我这里自定义的是 yearprogress。如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;yearprogress/readconfig&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>主包名 yearprogress 又是在 go.mod 文件里定义的。要生成 go.mod 需要我们在命令行里输入这样的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod init yearprogress</span><br></pre></td></tr></table></figure>
+
+<p>Go 语言会根据我们引用的各种包自动帮我们生成一个 go.mod 文件，用来进行包管理。</p>
+<p>这样就算完结了，很快是不是？因为我就是这样学习的，会跳过很多知识点，直接去找能帮助我完成这个小项目的积木块。这是我自己总结的学习方法，我称之为敏捷学习法。<br>这里贴一个我之前写的文章叫做：<br>【浅尝则止是正义！逃避困难也可以！论敏捷学习方法在编程学习上的应用。】<br>是微信公众号链接，以后考虑逐步都转移到 github 吧：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ZmOaU_VPwSJICqGpefiwaQ">https://mp.weixin.qq.com/s/ZmOaU_VPwSJICqGpefiwaQ</a><br>是去年5月份写的文章，年底就成功实践学了 Go 语言，说明这个学习方法还是有效果的。</p>
+<p>按照惯例，我把代码的全貌展示在 github 上。作为小白本白，我经常复制粘贴了别人的代码再修修补补一下就没法成功运行了，所以我这里提供一个完整的可以执行的代码，修修补补出了问题可以回滚：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hawken-im/yearprogress/tree/main/Step3">https://github.com/hawken-im/yearprogress/tree/main/Step3</a></p>
+<h2 id="以后的计划："><a href="#以后的计划：" class="headerlink" title="以后的计划："></a>以后的计划：</h2><p>我通过这个小项目入门了 Go 语言，下一步打算做个稍微复杂一点的项目，具体还没有想好，当然还是会和 Rum 结合起来。<br>至于这个进度条小项目，我的计划是升级一个小功能，就是年末的时候可以按每 0.1% 来发布。还有就是研究 JWT，看看怎么才能稳定的远程接入 quorum（Rum 的服务器端）。<br>希望能帮助到读者！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/02/24/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-3/" data-id="cl5txekln000935ctaa3zb2kc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Go语言写的进度条bot-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/20/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-2/" class="article-date">
+  <time datetime="2022-02-20T07:47:53.000Z" itemprop="datePublished">2022-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/20/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-2/">用 Go 语言写焦虑发生器并发布到 Rum 上·第三篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初学 Go 语言是在去年 11 月 20 日。到今年 2022 年的 2 月 3 日，我写了一个小 bot 连续运行成功，发布到了 github 上开源。花了两个多月时间。我感觉效率还是不错的。<br>于是我这就来记录这段学习经历：<br>目的一是让同样正在跨编程入门这道薛定谔之忽高忽低门槛的小白同学一些参考，更顺利的入门编程；<br>目的二是回顾并巩固自己过去的学习，为下一步继续学习打好基础；<br>目的三是让更多的人能够对 Rum 这个新的东西感兴趣。<br>希望能成功达成目的：</p>
+<h2 id="变得更酷之定时任务"><a href="#变得更酷之定时任务" class="headerlink" title="变得更酷之定时任务"></a>变得更酷之定时任务</h2><p>到现在，我们已经可以给 Rum 发送进度条了。当时我本人，在写到这一步的时候已经偷偷自调闹钟，在整点向 Rum 的“去中心微博”那个种子网络发了两三次了。<br>但是自己调闹钟来发内容，这根本不 bot！根本都不酷！<br>这一步我们要加入定时任务这个 new feature。</p>
+<p>经过多番研究</p>
+<blockquote>
+<p>（踩了不少坑，关于 cron job 的繁琐本人在 Rum 上的朋友圈里吐槽了一番）</p>
+</blockquote>
+<p>还是确定了引用这个包：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>&#123;</span><br><span class="line">	cron <span class="string">&quot;github.com/robfig/cron/v3&quot;</span><span class="comment">//前面的cron是自己取的包的别名</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>选定了这个包，就通过阅读官方文档，找到新建计划任务的方法：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c := cron.New(cron.WithLocation(time.UTC))</span><br></pre></td></tr></table></figure>
+
+<p>cron.New() 可以新建一个实例，里面的参数是指定时区，我们这里就用 UTC 时间。<br>接着应用实例 c 的方法 AddFunc 就好，如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.AddFunc([计划任务时间], <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;[要执行的函数]&#125;)</span><br></pre></td></tr></table></figure>
+<p>[计划任务时间]采用的是 linux 著名的 crontab 计划任务常用的格式，这个具体怎么弄除了自己去查询，还有个神奇的网站帮我们去做计划任务的时间：<br><a target="_blank" rel="noopener" href="https://crontab.guru/">https://crontab.guru/</a></p>
+<p>AddFunc 方法可以使用多次，也就是添加多个计划，之后再用：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.Start()</span><br></pre></td></tr></table></figure>
+<p>才可以开始计划好的任务。</p>
+<p>一开始我是每 24 小时发送一次，感觉有些打扰别人的时间线，经过一番折腾，最终把发送进度条的频率设置为每 1% 发送一次。</p>
+<p>这个的算法是这样思考的：<br>在接近一个整数百分比的时间前，每分钟一个百分比，算出 15 分钟 15 个百分比，每个百分比作一次被减数，去减下一个整数百分比的时间。直到整数百分比减去算出来的百分比小于 0.00001。那么就设定一个计划任务，在算出来的那个时间发布进度条。然后，休眠 85 个小时，因为一年的 1% 差不多是 87个小时。<br>如果这 15 分钟内没有一个百分比达成这个条件，则休眠 15 分钟，在下一个 15 分钟唤醒程序，再算一次。<br>打太多字读者也许会有点难读，我们放代码吧，代码配合注释可能更容易理解：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	c := cron.New(cron.WithLocation(time.UTC))</span><br><span class="line">	url := <span class="string">&quot;https://127.0.0.1:8002/api/v1/group/content&quot;</span> <span class="comment">//Rum 定义的 api</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		startTime := time.Date(<span class="number">2022</span>, time.Now().UTC().Month(), time.Now().UTC().Day(), time.Now().UTC().Hour(), time.Now().Minute(), <span class="number">0</span>, <span class="number">0</span>, time.UTC) <span class="comment">//开始时间</span></span><br><span class="line">		<span class="keyword">for</span> x := <span class="number">0</span>; x &lt;= <span class="number">14</span>; x++ &#123;                                                                                                                   <span class="comment">//循环15次，下一个15分钟每分钟一次</span></span><br><span class="line">			addMinutes, _ := time.ParseDuration(fmt.Sprintf(<span class="string">&quot;%dm&quot;</span>, x))<span class="comment">//每次循环，在开始时间前加x分钟</span></span><br><span class="line">			realTimePerc := timePerc(startTime.Add(addMinutes))</span><br><span class="line">			roundPerc := math.Ceil(realTimePerc*<span class="number">100</span>) / <span class="number">100</span> <span class="comment">//计算下一个整数百分比</span></span><br><span class="line">			differVal := roundPerc - realTimePerc          <span class="comment">//计算差值，差值接近于零代表时间接近整数百分比了</span></span><br><span class="line">			<span class="keyword">if</span> differVal &lt; <span class="number">0.00001</span> &#123;                       <span class="comment">//每分钟计算一次，每分钟是一年的0.000002，因此精确到小数点后5位</span></span><br><span class="line">				realTime := startTime.Add(addMinutes)</span><br><span class="line">				nextPostTime := fmt.Sprintf(<span class="string">&quot;%d %d %d %d *&quot;</span>, realTime.Minute(), realTime.Hour(), realTime.Day(), realTime.Month())</span><br><span class="line">				progressBar := printBar(roundPerc)</span><br><span class="line">				c.AddFunc(nextPostTime, <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123; postToRum(<span class="string">&quot;2022 进度条&quot;</span>, progressBar, <span class="string">&quot;fe2842cb-db6b-4e8a-b007-e83e5603131c&quot;</span>, url) &#125;) <span class="comment">//设置定时任务</span></span><br><span class="line">				c.Start()                                                                                                           <span class="comment">//开始定时任务</span></span><br><span class="line">				fmt.Println(<span class="string">&quot;######## went to sleep for 85 hours ########&quot;</span>)                                                         <span class="comment">//休眠85个小时，因为一个百分比大概接近87个小时</span></span><br><span class="line">				time.Sleep(<span class="number">85</span> * time.Hour)</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		fmt.Println(<span class="string">&quot;######## went to sleep ########&quot;</span>) <span class="comment">//休眠15分钟</span></span><br><span class="line">		time.Sleep(<span class="number">15</span> * time.Minute)</span><br><span class="line">		c.Stop()</span><br><span class="line">		fmt.Println(<span class="string">&quot;############ awaken ###########&quot;</span>) <span class="comment">//唤醒</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的 for 循环是放在 main 里，是一个死循环，我的理想情况是这个代码能够一年都不停地运行不会出错。写这篇文章的时候已经稳定运行了 3 个百分点。<br>这里的变量 startTime 是每一个 15 分钟判断开始的时间。设定的是整秒数。然后嵌套一个运行 15 次的 for 循环，每次循环都会在 startTime 的基础上增加一分钟并判断这个时间和整百分点时间差多少百分比。直到相差小于 0.00001。<br>再嵌套的一个 for 循环会遍历我的 config 文件里的 Rum 种子网络 ID。</p>
+<h2 id="变得更酷之记录日志"><a href="#变得更酷之记录日志" class="headerlink" title="变得更酷之记录日志"></a>变得更酷之记录日志</h2><p>最终实现自己的目标前，会出不少问题，要定位这些问题，最好的方法就是每一步都输出一个结果。<br>特别是我们上一步那种循环套循环，还要长期运行的代码，没有日志很难定位问题出在哪里。<br>于是我引入了日志。<br>也是老办法，查了下有哪些好用的包。试水了两三个，最后选到了这个：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	log <span class="string">&quot;github.com/sirupsen/logrus&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>非常不好意思的告诉读者们，我作为小白一开始连前面的 log 是别名都不懂，有了别名，以后要引用这个包就不需要写全名，而只需要写 log 这个小短词了。</p>
+<p>阅读文档得知，将 log 输出到文件的语句如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f, err := os.OpenFile(<span class="string">&quot;YP.log&quot;</span>, os.O_WRONLY|os.O_CREATE, <span class="number">0755</span>) <span class="comment">//log file</span></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	<span class="built_in">panic</span>(err)</span><br><span class="line">&#125;</span><br><span class="line">log.SetOutput(f)</span><br></pre></td></tr></table></figure>
+
+<p>先用 os.OpenFile 新建或打开一个文档，我这里取名叫 “YP.log”，将文档赋值给变量 f，然后调用 log.SetOutput(f) 就可以将日志统统输出到文档 YP.log 里了。<br>在需要记录日志的地方，调用 log.Info([日志内容]) 就可以了。<br>于是我在主循环中加入了一些日志，好让我可以观察程序的运行：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	f, err := os.OpenFile(<span class="string">&quot;YP.log&quot;</span>, os.O_WRONLY|os.O_CREATE, <span class="number">0755</span>) <span class="comment">//log file</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line">	log.SetOutput(f)</span><br><span class="line"></span><br><span class="line">	c := cron.New(cron.WithLocation(time.UTC))</span><br><span class="line">	url := <span class="string">&quot;https://127.0.0.1:8002/api/v1/group/content&quot;</span> <span class="comment">//Rum 定义的 api</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		startTime := time.Date(<span class="number">2022</span>, time.Now().UTC().Month(), time.Now().UTC().Day(), time.Now().UTC().Hour(), time.Now().Minute(), <span class="number">0</span>, <span class="number">0</span>, time.UTC) <span class="comment">//开始时间</span></span><br><span class="line">		log.Info(<span class="string">&quot;startTime:&quot;</span>, startTime)                                                                                                            <span class="comment">//记录一下循环开始时间</span></span><br><span class="line">		<span class="keyword">for</span> x := <span class="number">0</span>; x &lt;= <span class="number">14</span>; x++ &#123;                                                                                                                   <span class="comment">//循环15次，下一个15分钟每分钟一次</span></span><br><span class="line">			addMinutes, _ := time.ParseDuration(fmt.Sprintf(<span class="string">&quot;%dm&quot;</span>, x)) <span class="comment">//每次循环，在开始时间前加x分钟</span></span><br><span class="line">			log.Info(<span class="string">&quot;addMinutes:&quot;</span>, addMinutes)                        <span class="comment">//记录一下每次加的时间对不对</span></span><br><span class="line">			realTimePerc := timePerc(startTime.Add(addMinutes))</span><br><span class="line">			log.Info(<span class="string">&quot;realTimePerc:&quot;</span>, realTimePerc)        <span class="comment">//加了时间之后的百分比，记录一下这个增长过程</span></span><br><span class="line">			roundPerc := math.Ceil(realTimePerc*<span class="number">100</span>) / <span class="number">100</span> <span class="comment">//计算下一个整数百分比</span></span><br><span class="line">			log.Info(<span class="string">&quot;roundPerc:&quot;</span>, roundPerc)              <span class="comment">//虽然每次都是一样的值，但还是想看看</span></span><br><span class="line">			differVal := roundPerc - realTimePerc          <span class="comment">//计算差值，差值接近于零代表时间接近整数百分比了</span></span><br><span class="line">			log.Info(<span class="string">&quot;differVal:&quot;</span>, differVal)              <span class="comment">//看看差值的变化过程，越来越接近于零</span></span><br><span class="line">			<span class="keyword">if</span> differVal &lt; <span class="number">0.00001</span> &#123;                       <span class="comment">//每分钟计算一次，每分钟是一年的0.000002，因此精确到小数点后5位</span></span><br><span class="line">				realTime := startTime.Add(addMinutes)</span><br><span class="line">				log.Info(<span class="string">&quot;differVal less than 0:&quot;</span>, differVal) <span class="comment">//终于到整百分点了，记录一个</span></span><br><span class="line">				nextPostTime := fmt.Sprintf(<span class="string">&quot;%d %d %d %d *&quot;</span>, realTime.Minute(), realTime.Hour(), realTime.Day(), realTime.Month())</span><br><span class="line">				log.Info(<span class="string">&quot;nextPostTime:&quot;</span>, nextPostTime) <span class="comment">//报告具体的整百分点发布时间</span></span><br><span class="line">				progressBar := printBar(roundPerc)</span><br><span class="line">				c.AddFunc(nextPostTime, <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123; postToRum(<span class="string">&quot;2022 进度条&quot;</span>, progressBar, <span class="string">&quot;fe2842cb-db6b-4e8a-b007-e83e5603131c&quot;</span>, url) &#125;) <span class="comment">//设置定时任务</span></span><br><span class="line">				c.Start()</span><br><span class="line">				log.Info(<span class="string">&quot;######## went to sleep for 85 hours ########&quot;</span>)    <span class="comment">//日志里也记录一下                                                                         //开始定时任务</span></span><br><span class="line">				fmt.Println(<span class="string">&quot;######## went to sleep for 85 hours ########&quot;</span>) <span class="comment">//休眠85个小时，因为一个百分比大概接近87个小时</span></span><br><span class="line">				time.Sleep(<span class="number">85</span> * time.Hour)</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		log.Info(<span class="string">&quot;######## went to sleep ########&quot;</span>)</span><br><span class="line">		fmt.Println(<span class="string">&quot;######## went to sleep ########&quot;</span>) <span class="comment">//休眠15分钟</span></span><br><span class="line">		time.Sleep(<span class="number">15</span> * time.Minute)</span><br><span class="line">		c.Stop()</span><br><span class="line">		log.Info(<span class="string">&quot;############ awaken ###########&quot;</span>)</span><br><span class="line">		fmt.Println(<span class="string">&quot;############ awaken ###########&quot;</span>) <span class="comment">//唤醒</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按照惯例，我把代码的全貌展示在 github 上。作为小白本白，我经常复制粘贴了别人的代码再修修补补一下就没法成功运行了，所以我这里提供一个完整的可以执行的代码，修修补补出了问题可以回滚：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hawken-im/yearprogress/tree/main/Step2">https://github.com/hawken-im/yearprogress/tree/main/Step2</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/02/20/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-2/" data-id="cl5txeklm000835ct4tng14w7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Go语言写的进度条bot-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/17/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-1/" class="article-date">
+  <time datetime="2022-02-17T10:37:15.000Z" itemprop="datePublished">2022-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/17/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-1/">用 Go 语言写焦虑发生器并发布到 Rum 上·第二篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初学 Go 语言是在去年 11 月 20 日。到今年 2022 年的 2 月 3 日，我写了一个小 bot 连续运行成功，发布到了 github 上开源。花了两个多月时间。我感觉效率还是不错的。<br>于是我这就来记录这段学习经历：<br>目的一是让同样正在跨编程入门这道薛定谔之忽高忽低门槛的小白同学一些参考，更顺利的入门编程；<br>目的二是回顾并巩固自己过去的学习，为下一步继续学习打好基础；<br>目的三是让更多的人能够对 Rum 这个新的东西感兴趣。<br>希望能成功达成目的：</p>
+<h2 id="生成进度条"><a href="#生成进度条" class="headerlink" title="生成进度条"></a>生成进度条</h2><p>上一篇我们写了函数，可以用 HTTP Post 方法向 Rum 发送内容，我们这一篇就来发送焦虑内容之年度进度条吧。<br>进度条采用文本形式，我在 Unicode 的列表里找到了一些方块：</p>
+<img src="/2022/02/17/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-1/blocks.png" class="">
+
+<blockquote>
+<p>这个找 Unicode 的地方我提供给读者：<a target="_blank" rel="noopener" href="https://unicode-table.com/">https://unicode-table.com/</a></p>
+</blockquote>
+<p>进度条的算法我是这样规定的：<br>整个进度条长度是30个块，把百分比换算成三十分之 N。N 是一个整数。<br>那么把百分之几换算成三十分之几感觉掉了很多精度，这个丢掉的精度我用一些不完整的方块来表示。我找了 quarter block 表示四分之一块，找了 half block 表示一半，three quarter block 表示四分之三块，这样至少视觉上不会感觉太“不精确”了。<br>照着这样的算法思路我写了生成进度条的代码如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printBar</span><span class="params">(perc <span class="keyword">float64</span>)</span> <span class="params">(bar <span class="keyword">string</span>)</span></span> &#123; <span class="comment">//print progress bar by percentage</span></span><br><span class="line">	<span class="keyword">const</span> fullB <span class="keyword">string</span> = <span class="string">&quot;\u2588&quot;</span> <span class="comment">//0.9</span></span><br><span class="line">	<span class="keyword">const</span> halfB <span class="keyword">string</span> = <span class="string">&quot;\u2584&quot;</span> <span class="comment">//0.5</span></span><br><span class="line">	<span class="keyword">const</span> quarterB <span class="keyword">string</span> = <span class="string">&quot;\u2582&quot;</span> <span class="comment">//0.25</span></span><br><span class="line">	<span class="keyword">const</span> threeQuartersB <span class="keyword">string</span> = <span class="string">&quot;\u2586&quot;</span> <span class="comment">//0.75</span></span><br><span class="line">	<span class="keyword">const</span> emptyB <span class="keyword">string</span> = <span class="string">&quot;\u2581&quot;</span> <span class="comment">//0</span></span><br><span class="line">	<span class="keyword">const</span> ttlBs <span class="keyword">float64</span> = <span class="number">30</span> <span class="comment">//total number of blocks</span></span><br><span class="line"></span><br><span class="line">	bar = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">	fBs := <span class="keyword">int</span>(math.Floor(perc * ttlBs))</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; fBs; i++ &#123;</span><br><span class="line">		bar += fullB</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	gB := perc*ttlBs - math.Floor(perc*ttlBs) <span class="comment">//to decide which gab block to chose.</span></span><br><span class="line">	log.Info(<span class="string">&quot;the gap block indicator is:&quot;</span>, gB)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> gB &lt; <span class="number">0.0001</span> &amp;&amp; perc &lt; <span class="number">0.9999</span> &#123;</span><br><span class="line">		bar += emptyB</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> gB &gt;= <span class="number">0.0001</span> &amp;&amp; gB &lt; <span class="number">0.35</span> &#123;</span><br><span class="line">		bar += quarterB</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> gB &gt;= <span class="number">0.35</span> &amp;&amp; gB &lt; <span class="number">0.6</span> &#123;</span><br><span class="line">		bar += halfB</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> gB &gt;= <span class="number">0.6</span> &amp;&amp; gB &lt; <span class="number">0.85</span> &#123;</span><br><span class="line">		bar += threeQuartersB</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> perc &gt;= <span class="number">0.9999</span> &#123;</span><br><span class="line">		log.Info(<span class="string">&quot;quit earlier to prevent an extra empty block &quot;</span>, perc*ttlBs)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		bar += fullB</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	eBs := <span class="keyword">int</span>(ttlBs) - fBs - <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; eBs; i++ &#123;</span><br><span class="line">		bar += emptyB</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	content := <span class="string">&quot;&quot;</span></span><br><span class="line">	content += <span class="string">&quot;2022 进度条 / Year Progress 2022\n&quot;</span></span><br><span class="line">	content += bar</span><br><span class="line"></span><br><span class="line">	now := time.Now().UTC()</span><br><span class="line">	displayPerC := fmt.Sprintf(<span class="string">&quot;%.1f&quot;</span>, perc*<span class="number">100</span>) + <span class="string">&quot;%&quot;</span></span><br><span class="line">	bar = content + displayPerC + <span class="string">&quot;\nUTC时间: &quot;</span> + now.Format(<span class="string">&quot;2006, Jan 02, 15:04:05&quot;</span>) + <span class="string">&quot;\n&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>变量 bar 是函数要返回的值，也是要发送给 Rum 的全部内容。经过前面的计算，生成进度条之后，干脆在这个函数里把标题和时间戳也加上，成了最后的内容。<br>这个函数的一个参数是 perc，也即percentage，百分比，顺理成章的，我们需要根据时间来计算百分比了。</p>
+<p>计算时间的百分比很简单，输入一个时间，计算从 2022 年 1 月 1 日零点，到这个时间的时间长度，再比上整个 2022 年的时间长度就好了。<br>代码如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">timePerc</span><span class="params">(nextPost time.Time)</span> <span class="params">(perc <span class="keyword">float64</span>)</span></span> &#123; <span class="comment">//calculate percentage</span></span><br><span class="line">	initialTime := time.Date(<span class="number">2022</span>, time.January, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, time.UTC)</span><br><span class="line">	duration := nextPost.Sub(initialTime)</span><br><span class="line">	log.Info(<span class="string">&quot;duration is:&quot;</span>, duration)</span><br><span class="line">	perc = duration.Hours() / (<span class="number">365.0</span> * <span class="number">24.0</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码设置了变量 initialTime ，初始的时间，即是 2022 年 1 月 1 日零点。参数是 nextPost，类型是一个时间类型。变量 duration 就是用 nextPost 减去 initialTime 得出的时长了。精确到了小时，因为我最终输出的百分比只保留了 1 位小数点，精确到小时足够了。</p>
+<h2 id="整合三个函数"><a href="#整合三个函数" class="headerlink" title="整合三个函数"></a>整合三个函数</h2><p>到这里我们基础的功能都已经有了，再做更进一步的优化调整前我们做一次整合。手上现在有三个函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个函数：</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">postToRum</span><span class="params">(title <span class="keyword">string</span>, content <span class="keyword">string</span>, group <span class="keyword">string</span>, url <span class="keyword">string</span>)</span>//发送内容给 <span class="title">Rum</span></span></span><br></pre></td></tr></table></figure>
+<p>输入参数 content，也即要发布的内容，参数 group 是指定要发到 Rum 的哪一个种子网络（群组）。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第二个函数：</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printBar</span><span class="params">(perc <span class="keyword">float64</span>)</span> <span class="params">(bar <span class="keyword">string</span>)</span>//生成要发送的进度条内容</span></span><br></pre></td></tr></table></figure>
+<p>参数 perc 是百分比，根据百分比生成内容 bar，并返回。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第三个函数：</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">timePerc</span><span class="params">(nextPost time.Time)</span> <span class="params">(perc <span class="keyword">float64</span>)</span>//根据时间计算百分比的函数</span></span><br></pre></td></tr></table></figure>
+<p>参数 nextPost 是一个时间，输入时间，返回 perc 这个百分比。</p>
+<p>把三个函数整合到 main 函数中：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;	</span><br><span class="line">	url := <span class="string">&quot;https://127.0.0.1:8002/api/v1/group/content&quot;</span> <span class="comment">//Rum 定义的 api</span></span><br><span class="line">	progressBar := printBar(timePerc(time.Now().UTC())) <span class="comment">//按照当前的UTC时间生成一个进度条</span></span><br><span class="line">	postToRum(<span class="string">&quot;进度条测试&quot;</span>, progressBar, <span class="string">&quot;fe2842cb-db6b-4e8a-b007-e83e5603131c&quot;</span>, url) <span class="comment">//发布到Go语言学习小组</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里采用了当前的 UTC 时间，传递给 timePerc 函数，生成了百分比，把百分比传递给 printBar 函数，生成要发送的内容，赋值给变量 progressBar。<br>接下来把内容传递给上一篇写的函数，postToRum，礼成！</p>
+<p>按照惯例，我把代码的全貌展示在 github 上。作为小白本白，我经常复制粘贴了别人的代码再修修补补一下就没法成功运行了，所以我这里提供一个完整的可以执行的代码，修修补补出了问题可以回滚：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hawken-im/yearprogress/tree/main/Step1">https://github.com/hawken-im/yearprogress/tree/main/Step1</a></p>
+<p>另外，最终实现自己的目标前，会出不少问题，要定位这些问题，最好的方法就是每一步都输出一个结果。这里我用了 fmt.Println()。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/02/17/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-1/" data-id="cl5txekll000735ct9l2o7le1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Go语言写的进度条bot" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/04/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot/" class="article-date">
+  <time datetime="2022-02-04T01:42:56.000Z" itemprop="datePublished">2022-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/04/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot/">用 Go 语言写焦虑发生器并发布到 Rum 上·第一篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初学 Go 语言是在去年 11 月 20 日。到今年 2022 年的 2 月 3 日，我写了一个小 bot 连续运行成功，发布到了 github 上开源。花了两个多月时间。我感觉效率还是不错的。<br>于是我这就来记录这段学习经历：<br>目的一是让同样正在跨编程入门这道薛定谔之忽高忽低门槛的小白同学一些参考，更顺利的入门编程；<br>目的二是回顾并巩固自己过去的学习，为下一步继续学习打好基础；<br>目的三是让更多的人能够对 Rum 这个新的东西感兴趣。<br>希望能成功达成目的：</p>
+<h2 id="Go-语言基础入门"><a href="#Go-语言基础入门" class="headerlink" title="Go 语言基础入门"></a>Go 语言基础入门</h2><p>学 Go 的出发点是因为大佬们都用 Go 语言来写链上应用。看着他们在群里交流的非常欢乐，文字我都认识，但就不懂他们在讲什么。<br>这种感觉太难受，就像小矮人身在片场却眼巴巴看高等精灵们讲精灵语，脸上还是挂着围笑假装在参与对话。</p>
+<p>然后呢，因为自己喜欢游戏，找了本书叫：<a target="_blank" rel="noopener" href="https://xue.cn/hub/app/books/236">Pac Go: A Pac Man clone written in Go
+</a><br>就是用 Go 语言写吃豆人游戏。好，从这本书开始入门 Go。<br>并不是因为作者是美丽的女程序员我才选择的这本书。</p>
+<img src="/2022/02/04/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot/author_danicat.png" class="">
+
+<blockquote>
+<p><strong>并不是</strong></p>
+</blockquote>
+<p><code>P.S. 这本书的链接是链到  [xue.cn](https://xue.cn)  的，是一个可以一边阅读编程教程一边在当前书页运行代码的学习网站。</code></p>
+<p>一边做实例，一边学编程，也非常符合我自己的学习理念。很快我从  <a target="_blank" rel="noopener" href="https://xue.cn/">xue.cn</a> 转移到了 github 去学习，上面有 Pac Go 的开源代码。自己 clone 了一份到电脑上，然后通过读 readme 继续学习。</p>
+<p>老实说 Pac Go 的前 5 章我认真跟着学了，后面就没有认真学，而是略读之后，感觉基础语法已经掌握差不多了，就开始用 Go 做自己的项目。<br>因为新的一年快要到了，如何让人即便是年初，也要焦虑起来呢？想到了在 Twitter 上见过的 year progress。把人习以为常的日期，转变成百分比的进度条，会发现，时间怎么这么不经用？这么不经意的流逝掉了？这会让人产生巨大的焦虑感。于是我打算做一个这样的 bot 并到 Rum 上去运行。</p>
+<h2 id="Go-语言发送-HTTP-request"><a href="#Go-语言发送-HTTP-request" class="headerlink" title="Go 语言发送 HTTP request"></a>Go 语言发送 HTTP request</h2><p>理性的角度出发我应该规划一下这个程序的各个功能零件，以及工作流程，然后从生成进度条这一步开始，最后再做发布到 Rum 的 HTTP 请求。但我是小白啊，我野路子啊！我有搞着玩的特权啊！<br>先试着用 Go 写 HTTP 的 Post 请求，发布到 Rum 上看看再说。</p>
+<p>导入Go 语言的 HTTP 包：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;net/http&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>有了这个包，就可以调用 Go 语言的 HTTP 方法了，这里我是随便 google 了一下，了解到 HTTP 到底是个什么东西，HTTP 请求又是怎么发送的。<br>在此建议像我一样的新手小白也自己去研究 HTTP，这个并不难。本文不再花篇幅来讲 HTTP。<br>当然深入研究也会花大量时间，这里用不到那么深入的知识，单独看看 Post 和 Get 两种最常用的 HTTP 请求就好了。</p>
+<p>简单理解了 HTTP 请求，回来继续写自己的代码。</p>
+<p>建立一个 client 用来发送 request。代码是：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tr := &amp;http.Transport&#123;</span><br><span class="line">	TLSClientConfig: &amp;tls.Config&#123;InsecureSkipVerify: <span class="literal">true</span>&#125;,</span><br><span class="line">&#125;</span><br><span class="line">client := &amp;http.Client&#123;Transport: tr&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这一段代码简单的解释是这样的：<br>变量 client 是一个地址，指向了 http 包内的 struct，名为 Client。而这个 Client 里的一个值，也是一个 struct，名为 Transport。将 Transport 里的一个 TLSClientConfig 写入一个 tls 设置，把 InsecureSkipVerify 设置为 true。<br>这里的 tls 是把 HTTP 变成 HTTPS 的一层协议。我们这个设置是为了跳过一个 tls 的验证。因为这个 HTTP 请求的地址就在本地，我们可以不用进行验证。</p>
+<p>client 建立之后我们需要用 client 来发送请求。这段代码是：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">req, err := http.NewRequest(<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;https://127.0.0.1:[Rum节点的端口号]/api/v1/group/content&quot;</span>, body)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line">	req.Header.Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line"></span><br><span class="line">	resp, err := client.Do(req)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">defer</span> resp.Body.Close()</span><br></pre></td></tr></table></figure>
+
+<p>变量 req 就是我们要发送请求的一个实例了。通过 http.NewRequest 来建立，有三个参数，分别是：<br>“POST”，表示我们的请求是 POST 方法；<br>第二个参数是 URL，端口号可以在 Rum 客户端的“节点与网络”菜单中的“节点参数”中找到；</p>
+<img src="/2022/02/04/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot/portnumber.png" class="">
+
+<p>第三个 body 变量是要 Post 给 Rum 的具体内容。</p>
+<p>接下来设置一个 header，把 header 设置为一个 json 的内容。这是因为 Rum 需要我们发送 json 内容。<br>最后就通过 client.Do(req) 来执行我们设置好的一切，并将请求到的返回值赋值给 resp 变量。这样就通过 Go 完成了一个完整的 HTTP request。</p>
+<p>我把这个完整的 HTTP request 提供如下，整个 request 写成了一个叫 postToRum 的函数，请注意函数里面定义的叫 Payload 的 struct 数据结构是按照 quorum 的格式要求来声明的，内容格式可以自定义的是标题，正文，然后目标种子网络的ID，其他的不用修改：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">postToRum</span><span class="params">(title <span class="keyword">string</span>, content <span class="keyword">string</span>, group <span class="keyword">string</span>, url <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">type</span> Object <span class="keyword">struct</span> &#123;</span><br><span class="line">		Type    <span class="keyword">string</span> <span class="string">`json:&quot;type&quot;`</span></span><br><span class="line">		Content <span class="keyword">string</span> <span class="string">`json:&quot;content&quot;`</span></span><br><span class="line">		Name    <span class="keyword">string</span> <span class="string">`json:&quot;name&quot;`</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">type</span> Target <span class="keyword">struct</span> &#123;</span><br><span class="line">		ID   <span class="keyword">string</span> <span class="string">`json:&quot;id&quot;`</span></span><br><span class="line">		Type <span class="keyword">string</span> <span class="string">`json:&quot;type&quot;`</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">type</span> Payload <span class="keyword">struct</span> &#123;<span class="comment">//按照 quorum 要求的数据结构进行声明</span></span><br><span class="line">		Type   <span class="keyword">string</span> <span class="string">`json:&quot;type&quot;`</span></span><br><span class="line">		Object Object <span class="string">`json:&quot;object&quot;`</span></span><br><span class="line">		Target Target <span class="string">`json:&quot;target&quot;`</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	tr := &amp;http.Transport&#123;</span><br><span class="line">		TLSClientConfig: &amp;tls.Config&#123;InsecureSkipVerify: <span class="literal">true</span>&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	client := &amp;http.Client&#123;Transport: tr&#125;</span><br><span class="line"></span><br><span class="line">	data := Payload&#123;</span><br><span class="line">		Type: <span class="string">&quot;Add&quot;</span>,</span><br><span class="line">		Object: Object&#123;</span><br><span class="line">			Type:    <span class="string">&quot;Note&quot;</span>,</span><br><span class="line">			Content: content,</span><br><span class="line">			Name:    title,</span><br><span class="line">		&#125;,</span><br><span class="line">		Target: Target&#123;</span><br><span class="line">			ID:   group,</span><br><span class="line">			Type: <span class="string">&quot;Group&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	payloadBytes, err := json.Marshal(data)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err) <span class="comment">// handle err</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(payloadBytes))</span><br><span class="line"></span><br><span class="line">	body := bytes.NewReader(payloadBytes)</span><br><span class="line"></span><br><span class="line">	req, err := http.NewRequest(<span class="string">&quot;POST&quot;</span>, url, body)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line">	req.Header.Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line"></span><br><span class="line">	resp, err := client.Do(req)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">defer</span> resp.Body.Close()</span><br><span class="line"></span><br><span class="line">	received, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(<span class="keyword">string</span>(received))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数的四个参数分别是 title 表示标题，content 表示内容，group 用于指定要发布内容的种子网络 ID，最后 url 是要发 POST 请求的目标 url，这里的地址是根据 Rum 的 api 要求来的，读者感兴趣可以自己在 Rum 的 github 主页去看看，这里的话可以直接用我提供的地址。</p>
+<p>值得注意的是，请求的内容主体：body 变量，经过了两次加工：<br>最初是一个 struct，这个 struct 要符合 Rum 的格式要求，我们取名叫 Payload。<br>然后用 Payload 来创建一个叫 data 的实例，给 data 填入了具体的内容。<br>再接下来，用 json.Marshal(data) 方法，把 data 解析成了 json 格式，并赋值给变量 payloadBytes。<br>最后再把 payloadBytes 通过 bytes 包的 bytes.NewReader(payloadBytes) 方法，转变成了能够通过 HTTP POST 方法发送给 Rum 的字符。</p>
+<p>既然写好了这个函数，我也迫不及待的往 Rum 上发了一个 Hello Rum 的消息。<br>于是在 mian 函数里写下如下代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	url := <span class="string">&quot;https://127.0.0.1:[端口号]/api/v1/group/content&quot;</span></span><br><span class="line">	postToRum(<span class="string">&quot;Hello Rum&quot;</span>, <span class="string">&quot;Hello Rum&quot;</span>, <span class="string">&quot;[目标种子网络的ID]&quot;</span>, url)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>目标种子网络的 ID 可以在种子网络的详情处获取到，比如“Go语言学习小组”的 ID 是 </p>
+<blockquote>
+<p>fe2842cb-db6b-4e8a-b007-e83e5603131c</p>
+</blockquote>
+<img src="/2022/02/04/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot/groupID.png" class="">
+
+<p>我们填入 ID 就可以往“Go语言学习小组”发送 Hello Rum 了。<br>以上代码的片段忽略掉了一些 Go 语言的一些前置语句，比如包管理的 package 语句，比如引入依赖的包的 import 语句。这里我把代码完整的提供到了 github 仓库里。本系列文章的第一步骤放在了 Step0 文件夹里（因为我们程序员要习惯从零开始）：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hawken-im/yearprogress/tree/main/Step0">https://github.com/hawken-im/yearprogress/tree/main/Step0</a></p>
+<p>clone 完整代码或者复制粘贴也行，之后在 Step0 目录下执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go run main.go</span><br></pre></td></tr></table></figure>
+
+<p>就能看到结果了。</p>
+<p>非常欢迎读者们发送 Hello Rum 到“Go语言学习小组”，小组的种子提供于此：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;genesis_block&quot;: &#123;</span><br><span class="line">    &quot;BlockId&quot;: &quot;7016d356-b42f-421c-a086-094e1f35dbeb&quot;,</span><br><span class="line">    &quot;GroupId&quot;: &quot;fe2842cb-db6b-4e8a-b007-e83e5603131c&quot;,</span><br><span class="line">    &quot;ProducerPubKey&quot;: &quot;CAISIQOU1kDjMc3cCZRKV/r2bU/IUPukEcdFkIqkFe3Gbqfy+w==&quot;,</span><br><span class="line">    &quot;Hash&quot;: &quot;v+kfzMMuwNgb2h1PUAktBk1K9DZbN9pEdcfg2rG1Zys=&quot;,</span><br><span class="line">    &quot;Signature&quot;: &quot;MEUCIAZ8A4fgP5TWjXZoAe47qqfktrMrP1/2MMsOM5QsaFiQAiEAn8i8SzpdbGd4wlbbtk6Dws32Ea6aBWtcam+VdUzeHBg=&quot;,</span><br><span class="line">    &quot;TimeStamp&quot;: &quot;1637338394235167000&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;group_id&quot;: &quot;fe2842cb-db6b-4e8a-b007-e83e5603131c&quot;,</span><br><span class="line">  &quot;group_name&quot;: &quot;GO语言学习小组&quot;,</span><br><span class="line">  &quot;owner_pubkey&quot;: &quot;CAISIQOU1kDjMc3cCZRKV/r2bU/IUPukEcdFkIqkFe3Gbqfy+w==&quot;,</span><br><span class="line">  &quot;consensus_type&quot;: &quot;poa&quot;,</span><br><span class="line">  &quot;encryption_type&quot;: &quot;public&quot;,</span><br><span class="line">  &quot;cipher_key&quot;: &quot;835360cc49a5faf385b906b8fd1fb16f31a73c652c65398513070c27a3920550&quot;,</span><br><span class="line">  &quot;app_key&quot;: &quot;group_post&quot;,</span><br><span class="line">  &quot;signature&quot;: &quot;304502204baef7f83e01af403791a96024413deb59ecec7b92f9ae2c18377917e127e6c1022100a4529dc2542aa3f6dc9afd8d14d8bfbcbb3ac33a3a32ca993805a13a77942efe&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/02/04/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot/" data-id="cl5txekln000a35ct2168a3oj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-learning-go" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/22/learning-go/" class="article-date">
+  <time datetime="2022-01-22T03:48:32.000Z" itemprop="datePublished">2022-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/22/learning-go/">学 go 语言的一些小笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Thu-Feb-3-2022-终于弄好了包管理-YearProgress-2022-这个项目暂时告一段落"><a href="#Thu-Feb-3-2022-终于弄好了包管理-YearProgress-2022-这个项目暂时告一段落" class="headerlink" title="Thu-Feb-3 2022 终于弄好了包管理 YearProgress 2022 这个项目暂时告一段落"></a>Thu-Feb-3 2022 终于弄好了包管理 YearProgress 2022 这个项目暂时告一段落</h3><p>在度假，网不好，因此没法翻墙，断断续续 baidu 了好几天，被弄到 CSDN 里兜兜转转了好几天！鬼打墙一样。<br>今天好不容易找了个咖啡店，翻出去了，立刻！马上！看到了这句话：</p>
+<blockquote>
+<p>“In the most basic terms, A package is nothing but a directory inside your Go workspace containing one or more Go source files, or other Go packages.”<br>划重点是”is nothing but” </p>
+</blockquote>
+<p>这个太关键了<br>中文文章要么就是高深莫测，搞得小白不知道他们是不是在故弄玄虚，要么就觉得包管理是不是太习以为常就干脆跳过。<br>这篇文章就叫深入浅出。即便是可能会很高深，但是文章也说了， “In the most basic terms”。 对，可以很难，但是本小白要的就是”most basic terms”。 文章链接在此： <a target="_blank" rel="noopener" href="https://www.callicoder.com/golang-packages/">https://www.callicoder.com/golang-packages/</a></p>
+<h3 id="Mon-Jan-24-2022"><a href="#Mon-Jan-24-2022" class="headerlink" title="Mon-Jan-24 2022"></a>Mon-Jan-24 2022</h3><p>继续学了 flag 和 arguement，这样就可以在命令行输入酷酷的命令了。<br>go 的两个包分别是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;flag&quot;</span><br><span class="line">&quot;os&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sun-Jan-23-2022"><a href="#Sun-Jan-23-2022" class="headerlink" title="Sun-Jan-23 2022"></a>Sun-Jan-23 2022</h3><p>昨天跑通了 json 的解析，今天开始系统的学习 struct 以及指针，这样就能在函数中读取 struct 并返回一整个 struct<br>今天主要看的书是 Head First Go<br>下一步应该要把包管理学了，不然现在所有的代码都是堆在一个文件里面<br>学完小半本 Head First Go 之前应该暂时不会更新 Year Progress 2022 代码了</p>
+<h3 id="Sat-Jan-22-2022"><a href="#Sat-Jan-22-2022" class="headerlink" title="Sat-Jan-22 2022"></a>Sat-Jan-22 2022</h3><p>今天学 go 语言解析 json，这两个教程解答了我很多问题：<br><a target="_blank" rel="noopener" href="https://eager.io/blog/go-and-json/">https://eager.io/blog/go-and-json/</a><br><a target="_blank" rel="noopener" href="https://golangbyexample.com/struct-json-golang/">https://golangbyexample.com/struct-json-golang/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/01/22/learning-go/" data-id="cl5txeklx000l35ct30s1delb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-run-quorum-on-ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/15/run-quorum-on-ubuntu/" class="article-date">
+  <time datetime="2022-01-14T16:47:28.000Z" itemprop="datePublished">2022-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/15/run-quorum-on-ubuntu/">从零开始在 Ubuntu 20.04 上Build Quorum 并用本地 Rum App 进行连接</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="2022-Feb-13版本更新："><a href="#2022-Feb-13版本更新：" class="headerlink" title="2022 Feb 13版本更新："></a>2022 Feb 13版本更新：</h3><p>新版 quorum 里 jwt token 是可选项，如果留空的话系统会自动生成一个。</p>
+<hr>
+<p>Rum App 发布后我搭建了一个 windows server 运行，但一直感觉不够炫酷，于是折腾了一台 Ubuntu 主机。在主机上自己 Build Quorum，并运行，并在两位大佬轮番指导下才通过本地 Rum App 连接成功。两位大佬一位是 samson 一位是 wanming，这篇文章圈不出来他们本人。但是真的很感谢他们的热心帮助。如果大佬看到希望可以在评论区留言认领我的感谢。</p>
+<p>正文开始</p>
+<h2 id="1-从零开始的第一步-在服务器上获取-Rum-System"><a href="#1-从零开始的第一步-在服务器上获取-Rum-System" class="headerlink" title="1. 从零开始的第一步 - 在服务器上获取 Rum System"></a>1. 从零开始的第一步 - 在服务器上获取 Rum System</h2><p>这一步我们会通过 git 命令从 github 上直接克隆一个 Rum System 到我们的服务器上。<br>所以你需要先在服务器上安装 git：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+
+<p>安装完成输入命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>检查一下是否安装成功。<br>接下来就是从 github 上通过 git clone 命令来克隆 Rum System。<br>Rum System 在 github 上的地址是：<br><a target="_blank" rel="noopener" href="https://github.com/rumsystem/quorum">https://github.com/rumsystem/quorum</a></p>
+<p>点击“Code”按钮会出现下拉菜单，菜单中选择“SSH”这一栏，就会出现仓库地址了。</p>
+<img src="/2022/01/15/run-quorum-on-ubuntu/ScreenShot.png" class="">
+
+<p>将仓库地址放到克隆命令后，回车执行命令行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:rumsystem/quorum.git</span><br></pre></td></tr></table></figure>
+
+<p>如果发现系统提示我们无法连接，是因为 git clone 命令是通过 SSH 进行连接的，我们需要在自己的 github 账号里加入我们的 SSH 公钥。</p>
+<p>步骤可以参考 github 的官方教程，链接如下：<br><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">https://docs.github.com/en/authentication/connecting-to-github-with-ssh</a></p>
+<p>克隆完成后可以“ls”一下看看是不是有了“quorum”这个文件夹。</p>
+<h2 id="2-Build"><a href="#2-Build" class="headerlink" title="2. Build"></a>2. Build</h2><p>现在可以进入文件夹去 build 我们的 Rum System。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd quorum</span><br></pre></td></tr></table></figure>
+
+<p>在根目录里执行开发人员准备好的脚本文件就好：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/build.sh</span><br></pre></td></tr></table></figure>
+
+<p>这个时候有可能会报错，是说我们还没有安装 go 语言。那我们就安装一下好了。<br>go 语言的官方下载页面在这里：<br><a target="_blank" rel="noopener" href="https://go.dev/dl/">https://go.dev/dl/</a></p>
+<p>进去后下载 linux 的版本就好：</p>
+<img src="/2022/01/15/run-quorum-on-ubuntu/go.png" class="">
+
+<p>你可以通过 scp 命令上传到服务器，也可以在服务器上用 curl 命令把这个文件下载下来。<br>我这里是在本地用的 scp 命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp [本地tar.gz] [用户]@[服务器地址]:[服务器文件路径]</span><br></pre></td></tr></table></figure>
+
+<p>上传成功后，到文件所在位置输入如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>然后把 go&#x2F;bin 输入到环境变量中，只需要把下面的语句放到 &#x2F;etc&#x2F;profile 文件内：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:/usr/local/go/bin</span><br></pre></td></tr></table></figure>
+
+<p>确认一下是否安装成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go version</span><br></pre></td></tr></table></figure>
+
+<p>go 语言的官方安装教程在这里：<br><a target="_blank" rel="noopener" href="https://go.dev/doc/install">https://go.dev/doc/install</a></p>
+<p>再次 Build 成功，进入下一步。</p>
+<h2 id="3-在服务器上运行-Quorum"><a href="#3-在服务器上运行-Quorum" class="headerlink" title="3. 在服务器上运行 Quorum"></a>3. 在服务器上运行 Quorum</h2><p>Build 成功的可执行文件存在 dist 文件夹中。cd 进 dist 去，ls 看到 dist 里面的文件夹里有个 linux 文件夹，再次 cd 进去，就到了 linux 系统的可执行文件的所在地了。</p>
+<img src="/2022/01/15/run-quorum-on-ubuntu/dist.png" class="">
+
+<p>直接 .&#x2F;quorum 运行是不行的，需要加一些参数，我的带参数的运行命令是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUM_KSPASSWD=[我的密码] ./quorum -peername [我的节点名] -listen /ip4/0.0.0.0/tcp/7000  -apilisten 0.0.0.0:8002 -peer /ip4/94.23.17.189/tcp/10666/p2p/16Uiu2HAmGTcDnhj3KVQUwVx8SGLyKBXQwfAxNayJdEwfsnUYKK4u -peer /ip4/132.145.109.63/tcp/10666/p2p/16Uiu2HAmTovb8kAJiYK8saskzz7cRQhb45NRK5AsbtdmYsLfD3RM -ips [服务器的公网IP] -ips 127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>这样就能运行成功了。<br>运行成功的界面应该长这样：</p>
+<img src="/2022/01/15/run-quorum-on-ubuntu/successed.png" class="">
+
+<p>会跳出一些 warning 什么的，可以暂时忽略掉。</p>
+<p>这个时候可以输入一个 curl 命令检查一下是否连接成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -k https://127.0.0.1:8002/api/v1/groups</span><br></pre></td></tr></table></figure>
+
+<p>成功的话会返回一个当前种子网络的状态的消息。</p>
+<p>进入下一步之前再保存一个密钥，它位于 quorum 文件所在的文件夹里，cd 进 cert 文件夹，里面有两个文件分别是 server.key 和 server.crt。输入命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat server.crt</span><br></pre></td></tr></table></figure>
+
+<p>把返回的密钥复制保存在本地。</p>
+<p>新版本里 jwt token 不是必须的，这里也可以去存一个备用，jwt 位于 quorum 运行根目录所在的 config 文件夹里，里面有个后缀为 .toml 的文件，cat 或 vi 打开就能找到 jwt。</p>
+<h2 id="4-本地-Rum-APP-连接服务器"><a href="#4-本地-Rum-APP-连接服务器" class="headerlink" title="4. 本地 Rum APP 连接服务器"></a>4. 本地 Rum APP 连接服务器</h2><p>这下万事俱备了，我们在本地打开 Rum APP，从菜单项“节点与网络”中选中“外部节点”。</p>
+<img src="/2022/01/15/run-quorum-on-ubuntu/outterpeer.png" class="">
+
+<p>到了填入节点信息的步骤，把我们在上一步收集到的 jwt 和 server.crt 填进去就好了：</p>
+<img src="/2022/01/15/run-quorum-on-ubuntu/peerinfo.png" class="">
+
+<p>顺利的话，应该可以看到“外部节点模式”亮绿灯了：</p>
+<img src="/2022/01/15/run-quorum-on-ubuntu/green.png" class="">
+
+<p>不顺利的话，比如我，踩到的坑我在下一个小节总结一下，看看读者能不能顺利回避：</p>
+<h2 id="踩到的坑："><a href="#踩到的坑：" class="headerlink" title="踩到的坑："></a>踩到的坑：</h2><ol>
+<li>如果是新手小白的话可能会在各种文件夹和目录之间反复横跳找不到方向。这个看仔细一点就好了。</li>
+<li>防火墙可能会阻止本地 APP 连接服务器。解决办法是打开端口 433，7000，8002。</li>
+<li>最坑我的是我的云主机买的内存太小，如果内存溢出 quorum 进程马上就会被杀死。这个问题我一直无法定位，走了好多弯路，最后是求助大佬帮我发现的。解决办法是加了 1G swap。</li>
+<li>最后是一个很好用的工具 tmux，可以帮我们保持住 quorum 的运行的同时开启别的命令行界面进行测试。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/01/15/run-quorum-on-ubuntu/" data-id="cl5txekly000m35ct0vw3dp11" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-NotesOfLearningGo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/19/NotesOfLearningGo/" class="article-date">
+  <time datetime="2021-11-18T16:31:26.000Z" itemprop="datePublished">2021-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/19/NotesOfLearningGo/">Notes Of Learning Go</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>Sun Nov 21<br>今天的 Leetcode 练习是：<br>把罗马数字转化成整数，很有趣的一个小练习（也许是简单容易理解才觉得有趣哈哈）。<br>然后我对 Go 还不熟悉，还不知道 Go 里面也有类似 Json 的数据结构。<br>最后看了solution。发现别人的解题思路很棒，很直接。最后采用了她的思路。</p>
+<hr>
+<p>Sat Nov 20</p>
+<p>今天打算开始每天一个 Leetcode。<br>试着做了一个递归小函数，这种在以前初学编程的时候感觉好难好难，在 Leetcode 上居然是 easy 级别。程序员真厉害。<br><a target="_blank" rel="noopener" href="https://github.com/hawken-im/GoLeetCode">https://github.com/hawken-im/GoLeetCode</a></p>
+<hr>
+<p>Sat Nov 19</p>
+<p>先是在 xue.cn 上找了书但是发现有bug，然后在github上找到了该repo的地址就干脆在 github 里学习了吧。<br><a target="_blank" rel="noopener" href="https://github.com/danicat/pacgo/">https://github.com/danicat/pacgo/</a></p>
+<p>函数中有个叫“defer”的东西，后来去研究了，是一个很方便的语句，可以记录当前的状态但是延迟到函数结束再执行。</p>
+<p>然后还学了ansi escape code，一个很奇怪的控制命令行窗口的代码……掌握这个奇怪的知识有啥用吗，还是说这个知识点背后还有点别的有连续性的知识体系，暂时没有继续研究下去。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2021/11/19/NotesOfLearningGo/" data-id="cl5txeklq000d35ct3hdve58q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/19/kindledownload/">把kindle的书全部下载到电脑上！</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/10/itsgettingbadorbetter/">画 - 思绪大乱炖</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">敏捷学习方法论</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/24/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-3/">用 Go 语言写焦虑发生器并发布到 Rum 上·最终篇</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/20/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-2/">用 Go 语言写焦虑发生器并发布到 Rum 上·第三篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Hawken<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

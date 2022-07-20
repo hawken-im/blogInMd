@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "9d3592200acc06b0",
+    "type": "split",
+    "children": [
+      {
+        "id": "744e225259cb6e18",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fefafc873ddd3ceb",
+    "type": "split",
+    "children": [
+      {
+        "id": "6ae9813a0fa50bd0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f6b359fd5288e33",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b5710b8bb5b380e6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6451e3363d9912ad",
+    "type": "split",
+    "children": [
+      {
+        "id": "e7726952feb75c01",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1ed60b94280a0ed1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "744e225259cb6e18",
+  "lastOpenFiles": [
+    "source/_posts/itsgettingbadorbetter.md",
+    "source/_posts/元宇宙三问.md",
+    "source/_posts/关于终身学习.md",
+    "source/_posts/how-to-fix-apt-get.md",
+    "source/_posts/Go语言写的进度条bot.md",
+    "source/_posts/Dive-into-Docker-Not-every-image-is-using-the-bash-shell.md",
+    "source/_posts/givemeback.md",
+    "source/_posts/kindledownload.md",
+    "source/_posts/kindledownload/steps.png",
+    "source/_posts/learning-go.md"
+  ]
+}

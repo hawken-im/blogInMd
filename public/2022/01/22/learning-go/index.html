@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>学 go 语言的一些小笔记 | Hawken.im</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Thu-Feb-3 2022 终于弄好了包管理 YearProgress 2022 这个项目暂时告一段落在度假，网不好，因此没法翻墙，断断续续 baidu 了好几天，被弄到 CSDN 里兜兜转转了好几天！鬼打墙一样。今天好不容易找了个咖啡店，翻出去了，立刻！马上！看到了这句话：  “In the most basic terms, A package is nothing but a direct">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学 go 语言的一些小笔记">
+<meta property="og:url" content="https://blog.hawken.im/2022/01/22/learning-go/index.html">
+<meta property="og:site_name" content="Hawken.im">
+<meta property="og:description" content="Thu-Feb-3 2022 终于弄好了包管理 YearProgress 2022 这个项目暂时告一段落在度假，网不好，因此没法翻墙，断断续续 baidu 了好几天，被弄到 CSDN 里兜兜转转了好几天！鬼打墙一样。今天好不容易找了个咖啡店，翻出去了，立刻！马上！看到了这句话：  “In the most basic terms, A package is nothing but a direct">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-22T03:48:32.000Z">
+<meta property="article:modified_time" content="2022-02-04T01:22:37.087Z">
+<meta property="article:author" content="Hawken">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@whoareyouandyou">
+  
+    <link rel="alternate" href="/atom.xml" title="Hawken.im" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hawken.im</a>
+      </h1>
+      
+		  
+	  <nav id="sub-nav">
+		
+		  <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+		
+			
+				 <a id="nav-twitter-link" class="nav-icon" target="_blank" rel="noopener" href="https://twitter.com/whoareyouandyou" title="twitter"></a>
+			
+		<a id="nav-search-btn" class="nav-icon" title="Search"></a>
+	  </nav>
+	  <div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.hawken.im"></form>
+	  </div>
+	  
+    </div>
+
+
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-learning-go" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/22/learning-go/" class="article-date">
+  <time datetime="2022-01-22T03:48:32.000Z" itemprop="datePublished">2022-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学 go 语言的一些小笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Thu-Feb-3-2022-终于弄好了包管理-YearProgress-2022-这个项目暂时告一段落"><a href="#Thu-Feb-3-2022-终于弄好了包管理-YearProgress-2022-这个项目暂时告一段落" class="headerlink" title="Thu-Feb-3 2022 终于弄好了包管理 YearProgress 2022 这个项目暂时告一段落"></a>Thu-Feb-3 2022 终于弄好了包管理 YearProgress 2022 这个项目暂时告一段落</h3><p>在度假，网不好，因此没法翻墙，断断续续 baidu 了好几天，被弄到 CSDN 里兜兜转转了好几天！鬼打墙一样。<br>今天好不容易找了个咖啡店，翻出去了，立刻！马上！看到了这句话：</p>
+<blockquote>
+<p>“In the most basic terms, A package is nothing but a directory inside your Go workspace containing one or more Go source files, or other Go packages.”<br>划重点是”is nothing but” </p>
+</blockquote>
+<p>这个太关键了<br>中文文章要么就是高深莫测，搞得小白不知道他们是不是在故弄玄虚，要么就觉得包管理是不是太习以为常就干脆跳过。<br>这篇文章就叫深入浅出。即便是可能会很高深，但是文章也说了， “In the most basic terms”。 对，可以很难，但是本小白要的就是”most basic terms”。 文章链接在此： <a target="_blank" rel="noopener" href="https://www.callicoder.com/golang-packages/">https://www.callicoder.com/golang-packages/</a></p>
+<h3 id="Mon-Jan-24-2022"><a href="#Mon-Jan-24-2022" class="headerlink" title="Mon-Jan-24 2022"></a>Mon-Jan-24 2022</h3><p>继续学了 flag 和 arguement，这样就可以在命令行输入酷酷的命令了。<br>go 的两个包分别是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;flag&quot;</span><br><span class="line">&quot;os&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sun-Jan-23-2022"><a href="#Sun-Jan-23-2022" class="headerlink" title="Sun-Jan-23 2022"></a>Sun-Jan-23 2022</h3><p>昨天跑通了 json 的解析，今天开始系统的学习 struct 以及指针，这样就能在函数中读取 struct 并返回一整个 struct<br>今天主要看的书是 Head First Go<br>下一步应该要把包管理学了，不然现在所有的代码都是堆在一个文件里面<br>学完小半本 Head First Go 之前应该暂时不会更新 Year Progress 2022 代码了</p>
+<h3 id="Sat-Jan-22-2022"><a href="#Sat-Jan-22-2022" class="headerlink" title="Sat-Jan-22 2022"></a>Sat-Jan-22 2022</h3><p>今天学 go 语言解析 json，这两个教程解答了我很多问题：<br><a target="_blank" rel="noopener" href="https://eager.io/blog/go-and-json/">https://eager.io/blog/go-and-json/</a><br><a target="_blank" rel="noopener" href="https://golangbyexample.com/struct-json-golang/">https://golangbyexample.com/struct-json-golang/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2022/01/22/learning-go/" data-id="cl5txeklx000l35ct30s1delb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/04/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          用 Go 语言写焦虑发生器并发布到 Rum 上·第一篇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/01/15/run-quorum-on-ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">从零开始在 Ubuntu 20.04 上Build Quorum 并用本地 Rum App 进行连接</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/19/kindledownload/">把kindle的书全部下载到电脑上！</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/10/itsgettingbadorbetter/">画 - 思绪大乱炖</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">敏捷学习方法论</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/24/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-3/">用 Go 语言写焦虑发生器并发布到 Rum 上·最终篇</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/20/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-2/">用 Go 语言写焦虑发生器并发布到 Rum 上·第三篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Hawken<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

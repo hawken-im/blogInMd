@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hawken.im</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hawken.im">
+<meta property="og:url" content="https://blog.hawken.im/page/3/index.html">
+<meta property="og:site_name" content="Hawken.im">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hawken">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@whoareyouandyou">
+  
+    <link rel="alternate" href="/atom.xml" title="Hawken.im" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hawken.im</a>
+      </h1>
+      
+		  
+	  <nav id="sub-nav">
+		
+		  <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+		
+			
+				 <a id="nav-twitter-link" class="nav-icon" target="_blank" rel="noopener" href="https://twitter.com/whoareyouandyou" title="twitter"></a>
+			
+		<a id="nav-search-btn" class="nav-icon" title="Search"></a>
+	  </nav>
+	  <div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.hawken.im"></form>
+	  </div>
+	  
+    </div>
+
+
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-MAC-osx-永久设置zsh的locale为en-US-UTF-8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/15/MAC-osx-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEzsh%E7%9A%84locale%E4%B8%BAen-US-UTF-8/" class="article-date">
+  <time datetime="2021-01-15T02:28:00.000Z" itemprop="datePublished">2021-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/15/MAC-osx-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEzsh%E7%9A%84locale%E4%B8%BAen-US-UTF-8/">MAC osx 永久设置zsh的locale为en-US.UTF-8</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 之前每次都要输入export locale&#x3D;en-US.UTF-8</p>
+<p>网上的教程也没有讲清楚zsh启动的配置文件到底在哪里。</p>
+<p>我这次找到了。</p>
+<p>在&#x2F;etc&#x2F;zshrc</p>
+<p>在这个文件后面加入</p>
+<p>export locale&#x3D;en-US.UTF-8</p>
+<p>就好了。</p>
+<p>当然这个文件权限是readonly，要在vim前面加个sudo，这个也是教程没有提到的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2021/01/15/MAC-osx-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEzsh%E7%9A%84locale%E4%B8%BAen-US-UTF-8/" data-id="cl5txeklp000b35ct2t9eh7jf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-继续设置了ssl-certificate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/20/%E7%BB%A7%E7%BB%AD%E8%AE%BE%E7%BD%AE%E4%BA%86ssl-certificate/" class="article-date">
+  <time datetime="2020-03-20T15:23:00.000Z" itemprop="datePublished">2020-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/20/%E7%BB%A7%E7%BB%AD%E8%AE%BE%E7%BD%AE%E4%BA%86ssl-certificate/">继续设置了ssl certificate</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现在只能通过https来登录<br><a target="_blank" rel="noopener" href="https://linoxide.com/linux-how-to/install-letsencrypt-ubuntu/">https://linoxide.com/linux-how-to/install-letsencrypt-ubuntu/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2020/03/20/%E7%BB%A7%E7%BB%AD%E8%AE%BE%E7%BD%AE%E4%BA%86ssl-certificate/" data-id="cl5txekm8001135cta4wobvub" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Untitled-Post-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/20/Untitled-Post-1/" class="article-date">
+  <time datetime="2020-03-19T16:21:00.000Z" itemprop="datePublished">2020-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/20/Untitled-Post-1/">Untitled Post - 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在虚拟环境运行已经成功了。但是链接nginx出现了502错误。<br>找了这个教程。明天再来研究吧。  </p>
+<p><a target="_blank" rel="noopener" href="https://www.datadoghq.com/blog/nginx-502-bad-gateway-errors-gunicorn/">https://www.datadoghq.com/blog/nginx-502-bad-gateway-errors-gunicorn/</a>  </p>
+<p>成功解决了这个问题，教程用的是：<br><a target="_blank" rel="noopener" href="https://linoxide.com/linux-how-to/install-flask-python-ubuntu/">https://linoxide.com/linux-how-to/install-flask-python-ubuntu/</a><br><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04</a>  </p>
+<p>两个互相看一下。<br>一开始我用的root账号，后来自己新建了一个账号就成功了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2020/03/20/Untitled-Post-1/" data-id="cl5txeklu000h35ctdvjd89no" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-登海外的服务器太慢了所以又装了个Mosh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/10/%E7%99%BB%E6%B5%B7%E5%A4%96%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%AA%E6%85%A2%E4%BA%86%E6%89%80%E4%BB%A5%E5%8F%88%E8%A3%85%E4%BA%86%E4%B8%AAMosh/" class="article-date">
+  <time datetime="2020-03-10T11:11:00.000Z" itemprop="datePublished">2020-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/10/%E7%99%BB%E6%B5%B7%E5%A4%96%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%AA%E6%85%A2%E4%BA%86%E6%89%80%E4%BB%A5%E5%8F%88%E8%A3%85%E4%BA%86%E4%B8%AAMosh/">登海外的服务器太慢了所以又装了个Mosh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>装mosh的时候遇到locale的坑，这里记录一下：<br>提示跟locale相关的错误，可以同时在服务器端和本地输入locale 命令看一下自己的locale list是不是UTF-8一套的。<br>如果不是就需要用export命令修改一下。<br>我修改了本地locale 为en_US.UTF-8，问题得到了解决。  </p>
+<p>命令<br>locale 查看当前locale  </p>
+<p>export LANG&#x3D;en_US.UTF-8<br>export LC_ALL&#x3D;en_US.UTF-8<br>之后就可以mosh了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2020/03/10/%E7%99%BB%E6%B5%B7%E5%A4%96%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%AA%E6%85%A2%E4%BA%86%E6%89%80%E4%BB%A5%E5%8F%88%E8%A3%85%E4%BA%86%E4%B8%AAMosh/" data-id="cl5txekm7000z35ct371d1hq2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-在ubuntu上安装python3-8-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/10/%E5%9C%A8ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85python3-8-2/" class="article-date">
+  <time datetime="2020-03-10T09:32:00.000Z" itemprop="datePublished">2020-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/10/%E5%9C%A8ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85python3-8-2/">在ubuntu上安装python3.8.2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>强迫症患者发现远程服务器的python版本不够update。 最新的python版本是3.8.2。 <br>找到一个教程：<br><a target="_blank" rel="noopener" href="https://tecadmin.net/install-python-3-8-ubuntu/">https://tecadmin.net/install-python-3-8-ubuntu/</a>  </p>
+<p>安装以下包，用于compile最新的python。<br> sudo apt-get install build-essential checkinstall<br>sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev \ libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev  </p>
+<p>然后去下载python 3.8.2，并解压<br>cd &#x2F;opt<br>sudo wget <a target="_blank" rel="noopener" href="https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz">https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz</a><br>sudo tar xzf Python-3.8.2.tgz  </p>
+<p>make 并安装<br> cd Python-3.8.2<br>sudo .&#x2F;configure –enable-optimizations sudo make altinstall  </p>
+<p>检查版本：<br> python3.8 -V Python-3.8.2  </p>
+<p>删除掉安装包：<br>cd &#x2F;opt sudo rm -f Python-3.8.2.tgz</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2020/03/10/%E5%9C%A8ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85python3-8-2/" data-id="cl5txekm1000r35ct0w1rb4wm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-开始一边学一边用Python-Flask" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/10/%E5%BC%80%E5%A7%8B%E4%B8%80%E8%BE%B9%E5%AD%A6%E4%B8%80%E8%BE%B9%E7%94%A8Python-Flask/" class="article-date">
+  <time datetime="2020-03-10T05:09:00.000Z" itemprop="datePublished">2020-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/10/%E5%BC%80%E5%A7%8B%E4%B8%80%E8%BE%B9%E5%AD%A6%E4%B8%80%E8%BE%B9%E7%94%A8Python-Flask/">开始一边学一边用Python+Flask</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>官方教程就非常够用了，网上很多别的教程其实都是抄这个：<br><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04</a>  </p>
+<p>-–<br>打算做一个时间管理应用。  </p>
+<p>作为新手，先做比较熟悉的web端应用。APP以后再说吧。</p>
+<p>经过一番技术选型，打算用最轻量的Flask来搞。</p>
+<p>按照FLask官方网站一步一步在本地安装并运行通过。</p>
+<p>现在正在服务器上安装并运行。</p>
+<p>服务器的环境采用nginx+uwsgi+python 3.8</p>
+<p>一步一步开始吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2020/03/10/%E5%BC%80%E5%A7%8B%E4%B8%80%E8%BE%B9%E5%AD%A6%E4%B8%80%E8%BE%B9%E7%94%A8Python-Flask/" data-id="cl5txekm1000t35ct2hug6mox" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-用SSH来操作github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/14/%E7%94%A8SSH%E6%9D%A5%E6%93%8D%E4%BD%9Cgithub/" class="article-date">
+  <time datetime="2019-12-14T13:55:00.000Z" itemprop="datePublished">2019-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/14/%E7%94%A8SSH%E6%9D%A5%E6%93%8D%E4%BD%9Cgithub/">用SSH来操作github</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近用github很频繁。<br>是的，产品经理也要用github。  </p>
+<p>用客户端登陆被嘲讽了。<br>而且其实客户端很局限，能用的功能比较少，决定还是用命令行来搞定。  </p>
+<p>这一步全是参考github的官方文档，我把关键的文档链接贴出来：  </p>
+<p><a target="_blank" rel="noopener" href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh</a>  </p>
+<p>嗯，以上  </p>
+<p>今晚读到了分支管理这里，成果是终于把公司的wiki clone到本地了。以后可以在本地编辑文档再用命令行push上去了。  </p>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896954848507552">https://www.liaoxuefeng.com/wiki/896043488029600/896954848507552</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2019/12/14/%E7%94%A8SSH%E6%9D%A5%E6%93%8D%E4%BD%9Cgithub/" data-id="cl5txekm6000y35ct1rbmchrf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-给服务器开通BBR" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/14/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E9%80%9ABBR/" class="article-date">
+  <time datetime="2019-12-14T11:13:00.000Z" itemprop="datePublished">2019-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/14/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E9%80%9ABBR/">给服务器开通BBR</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Google developed a TCP Congestion Control Algorithm (CCA) called TCP Bottleneck Bandwidth and RRT (BBR) that overcomes many of the issues found in both Reno and CUBIC (the default CCAs). This new algorithm not only achieves significant bandwidth improvements, but also lower latency. TCP BBR is already employed with google.com servers, and now you can make it happen–so long as your Linux machine is running kernel 4.9 or newer.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2019/12/14/%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E9%80%9ABBR/" data-id="cl5txekm7001035ct3j733pd5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-测试我的图床" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/26/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%9B%BE%E5%BA%8A/" class="article-date">
+  <time datetime="2019-11-25T17:21:00.000Z" itemprop="datePublished">2019-11-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/26/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%9B%BE%E5%BA%8A/">测试我的图床</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>假名记忆  </p>
+<p><a target="_blank" rel="noopener" href="http://mih.hit.ooo:81/mih/img/nibongana.jpeg"><img src="http://mih.hit.ooo:81/mih/img/nibongana.jpeg"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2019/11/26/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%9B%BE%E5%BA%8A/" data-id="cl5txekm6000x35cthgue37nm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-搭建FTP服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/26/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
+  <time datetime="2019-11-25T16:32:00.000Z" itemprop="datePublished">2019-11-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/26/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/">搭建FTP服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>详细过程有点懒得写，链接一个教程<br><a target="_blank" rel="noopener" href="https://www.howtoforge.com/tutorial/ubuntu-vsftpd/">https://www.howtoforge.com/tutorial/ubuntu-vsftpd/</a><br>这里踩到第一个坑是被动模式<br>因为有防火墙，一定要被动模式才能连通<br>被动模式是这么一回事<br><a target="_blank" rel="noopener" href="http://4.bp.blogspot.com/-0FCUXqtqBMc/XdwBf5cmwTI/AAAAAAAAGBM/xphTGV2Z4SoLMUbuJeKqZNIyKtZQPvJMQCK4BGAYYCw/s1600/221601380466453.jpg"><img src="https://4.bp.blogspot.com/-0FCUXqtqBMc/XdwBf5cmwTI/AAAAAAAAGBM/xphTGV2Z4SoLMUbuJeKqZNIyKtZQPvJMQCK4BGAYYCw/s320/221601380466453.jpg"></a>  </p>
+<p>开启被动模式在filezilla的log中会看到：<br>p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px ‘Helvetica Neue’; color: #008000; background-color: #ffffff} span.Apple-tab-span {white-space:pre}  </p>
+<p>Response: 227 Entering Passive Mode (H1,H2,H3,H4,P1,P2).</p>
+<p>这里的P1*256+P2，就是当前被动模式的随机端口号  </p>
+<p>防火墙中开启设定好的端口范围，再重启一下vsftp服务<br>搞定了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.hawken.im/2019/11/26/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-id="cl5txekm5000v35ct10gjgwbk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/19/kindledownload/">把kindle的书全部下载到电脑上！</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/10/itsgettingbadorbetter/">画 - 思绪大乱炖</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/03/%E6%95%8F%E6%8D%B7%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">敏捷学习方法论</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/24/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-3/">用 Go 语言写焦虑发生器并发布到 Rum 上·最终篇</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/20/Go%E8%AF%AD%E8%A8%80%E5%86%99%E7%9A%84%E8%BF%9B%E5%BA%A6%E6%9D%A1bot-2/">用 Go 语言写焦虑发生器并发布到 Rum 上·第三篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Hawken<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
