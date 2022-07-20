@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "9d3592200acc06b0",
+    "id": "67ba16dc62c29714",
     "type": "split",
     "children": [
       {
-        "id": "744e225259cb6e18",
+        "id": "5d668ceb179a2a88",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -15,15 +15,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fefafc873ddd3ceb",
+    "id": "8a9ad037611e9887",
     "type": "split",
     "children": [
       {
-        "id": "6ae9813a0fa50bd0",
+        "id": "db00caffe3a6ba72",
         "type": "tabs",
         "children": [
           {
-            "id": "4f6b359fd5288e33",
+            "id": "b6c4f1ecbafa6cc9",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -31,7 +31,7 @@
             }
           },
           {
-            "id": "b5710b8bb5b380e6",
+            "id": "e13d982928814a95",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -52,15 +52,15 @@
     "width": 300
   },
   "right": {
-    "id": "6451e3363d9912ad",
+    "id": "5249b45762fa4a9d",
     "type": "split",
     "children": [
       {
-        "id": "e7726952feb75c01",
+        "id": "51f9070611053d0c",
         "type": "tabs",
         "children": [
           {
-            "id": "1ed60b94280a0ed1",
+            "id": "d2c5181c290e00f1",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -82,17 +82,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "744e225259cb6e18",
+  "active": "5d668ceb179a2a88",
   "lastOpenFiles": [
-    "source/_posts/itsgettingbadorbetter.md",
-    "source/_posts/元宇宙三问.md",
-    "source/_posts/关于终身学习.md",
-    "source/_posts/how-to-fix-apt-get.md",
-    "source/_posts/Go语言写的进度条bot.md",
-    "source/_posts/Dive-into-Docker-Not-every-image-is-using-the-bash-shell.md",
-    "source/_posts/givemeback.md",
-    "source/_posts/kindledownload.md",
-    "source/_posts/kindledownload/steps.png",
-    "source/_posts/learning-go.md"
+    "run-quorum-on-ubuntu.md",
+    "Ubuntu-20-04-Build-Quorum.md",
+    "NotesOfLearningGo.md",
+    "元宇宙三问.md",
+    "从零开始在 Ubuntu 20.04 上Build Quorum 并用本地 Rum App 进行连接.md",
+    "ScreenShot.png",
+    "测试我的图床.md",
+    "采用zsh作为mac的默认shell.md",
+    "关于终身学习.md",
+    "image/Screen Shot 2022-01-14 at 23.46.51.png.md"
   ]
 }

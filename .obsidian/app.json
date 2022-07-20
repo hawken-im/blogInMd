@@ -1,5 +1,6 @@
 {
   "legacyEditor": false,
   "livePreview": true,
-  "alwaysUpdateLinks": true
+  "fileSortOrder": "byCreatedTime",
+  "promptDelete": false
 }
