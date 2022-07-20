@@ -44,14 +44,14 @@ AI 不眠不休的学习人类，这种焦虑刺激着我认真听课，学习�
 有个网站介绍了这个路线：
 [https://www.popularmechanics.com/science/a30285283/longest-walkable-distance-earth/](https://www.popularmechanics.com/science/a30285283/longest-walkable-distance-earth/)
 
-![](itsgettingbadorbetter/road.png)
+![](road.png)
 这条路全程都可以步行通过。长度是14000英里。喜欢徒步的人应该知道，人一天大概可以走50公里，差不多是30英里。我们算一下：14000/30=466天。
 一年多。
 一个人在理想的情况下（有吃有喝有住）就这么走下去，一年多可以穿过整个亚非欧三个大陆。
 再对比智人存在的9万年时间，是不是太长了点，足够我们走遍全世界了。
 智人的迁徙路线：
-{% asset_img homo.png %}
 
+![](homo.png)
 祖先在几万年前走遍全世界，看看我们现在，有了汽车，飞机，火车，远洋巨轮。我们却被自己在地图上画的那一根根线，圈了起来，哪儿都去不了。
 
 我在[元宇宙三问]这篇文章中就说，人类以后也许再也没有自由迁徙的日子了，统统到虚拟世界去当电池，赚取维持肉身存活的营养液吧。
