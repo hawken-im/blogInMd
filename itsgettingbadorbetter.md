@@ -44,8 +44,7 @@ AI 不眠不休的学习人类，这种焦虑刺激着我认真听课，学习�
 有个网站介绍了这个路线：
 [https://www.popularmechanics.com/science/a30285283/longest-walkable-distance-earth/](https://www.popularmechanics.com/science/a30285283/longest-walkable-distance-earth/)
 
-![](road.png)
-
+![](itsgettingbadorbetter/road.png)
 这条路全程都可以步行通过。长度是14000英里。喜欢徒步的人应该知道，人一天大概可以走50公里，差不多是30英里。我们算一下：14000/30=466天。
 一年多。
 一个人在理想的情况下（有吃有喝有住）就这么走下去，一年多可以穿过整个亚非欧三个大陆。
