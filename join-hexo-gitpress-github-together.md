@@ -40,7 +40,8 @@ permalink: :title/
 ```
 
 3. 发布文章的方法：
-3.1. Hexo 发布到 blog：
+
+3\.1\. Hexo 发布到 blog：
 本地创建新文章：
 ```
 hexo new articalname
@@ -48,6 +49,6 @@ hexo new articalname
 通过 Obsidian 编辑文章。
 用 deploy 命令发布到自己的 blog。
 
-3.2. git 命令发布到 GitPress：
+3\.2\. git 命令发布到 GitPress：
 在本地通过 git 命令把 '\_post' 文件夹同步到 GitHub。
 GitPress 自动读取该 Repo 并发布。
